@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Personal Launchpad</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <header>
+        <a href="">
+            <svg height="64" class="page-logo" width="64" aria-hidden="true">
+               <circle cx="32" cy="32" r="20" stroke="white" stroke-width="10" fill="red" fill-opacity="0" />
+            </svg>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a class="projects">Interactive Projects</a>
+                    <div class="projects-dropdown">
+                        <a href="/calc">Calculator</a>
+                        <a href="/kaomoji">Kaomoji Generator</a>
+                    </div>
+                </li>
+                <li>"Art"</li>
+            </ul>
+        </nav>
+        <form>
+            <input type="text" placeholder="Search" />
+        </form>
+    </header>
+
+    <main class="main">
+        <aside class="profile">
+            <img class="pfp" src="/pfp.png"/>
+            <div class="profile-text">
+                <h3 class="name">Omer</h3>
+                <h4 class="username">omerismyname</h4>
+                <p class="info">It's me, hello</p>
+                <p class="twitter"><a class="link" href="https://twitter.com/omerismyname">@omerismyname</a></p>
+                <p class="location">Somewhere, 7 miles from Nowhere</p>
+                <p class="email"><a class="link" href="mailto:omerkaraman101@hotmail.com">omerkaraman101@hotmail.com</a></p>
+                <p class="discord">Omer#7291</p>
+            </div>
+        </aside>
+        <section class="workspace">
+            <nav class="main-nav-container">
+                <ul class="main-nav">
+                    <li class="main-li selected-li" onclick="workspaceSelect('about'); this.className += ' selected-li';">About</li>
+                    <li class="main-li" onclick="workspaceSelect('snippets'); this.className += ' selected-li';">Code Snippets</li>
+                    <li class="main-li" onclick="workspaceSelect('artworks'); this.className += ' selected-li';">"Art"</li>
+                </ul>
+            </nav>
+            <section class="workspace-tab" id="about">
+                <h3 class="about-title">Why this site exists, I guess...</h3>
+                <p class="about-paragraph">I made this little corner of the web as a sort of personal launchpad to house any little projects of mine.
+                There are interactive versions of things I've coded, and drawings/paintings that I've done.
+                If you're looking for anything good, then this certainly isn't the place to look for it, apologies, but feel free to take a look around.</p>
+            </section>
+            <section class="workspace-tab" id="snippets">
+                <div id="snippets-container">
+                    <section id="descriptions">
+                        <div class="description">
+                            <h3><a href="/kaomoji">Kaomoji Generator</a></h3>
+                            <p class="date">14/10/2019</p>
+                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="kaomoji-source" other="calc-source">^</p>
+                            <p class="desc">A tool used to generate kaomoji, which can then be copied and pasted elsewhere</p>
+                        </div>
+                        <div class="description">
+                            <h3><a href="/calc">Calculator</a></h3>
+                            <p class="date">09/10/2019</p>
+                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="calc-source" other="kaomoji-source">^</p>
+                            <p class="desc">Literally just a calculator - did it as a refresher for front-end coding</p>
+                        </div>
+                    </section>
+                    <aside id="source-code">
+                        <div id="calc-source">
+                            <script src="https://gist.github.com/omerismyname/8b58f6f18d014cf15e137b6739b3d8cf.js"></script>
+                        </div>
+                        <div id="kaomoji-source">
+                            <script src="https://gist.github.com/omerismyname/54c18774dae4982a40063895a857284e.js"></script>
+                        </div>
+                    </aside>
+                </div>
+                <script>
+                    function e_click(e) {
+                        if (e.style.transform == "none") {
+                            e.style.transform = "rotate(180deg)";
+                            document.getElementById(e.getAttribute("other")).style.display = "none";
+                            document.getElementById(e.getAttribute("code")).style.display = "block";
+                            var i, x;
+                            x = document.getElementsByClassName("show-code");
+                            for (i = 0; i < x.length; i++) {
+                                if (x[i].getAttribute("code") != e.getAttribute("code")) {x[i].style.transform = "none";}
+                            }
+                        }
+                        else {
+                            e.style.transform = "none";
+                            document.getElementById(e.getAttribute("code")).style.display = "none";
+                        }
+                    }
+                </script>
+            </section>
+            <section class="workspace-tab" id="artworks">
+                <div class="imgrow">
+                    <div class="imgcolumn">
+                        <a><img src="/pics/Life_in_the_Felled_Tree.png" alt="Tree" width="220"></a>
+                        <a><img src="/pics/Lobalug.png" alt="Paper Sky" width="220"></a>
+                        <a><img src="/pics/Paper_Sky.jpg" alt="Untitled" width="220"></a>
+                    </div>
+                    <div class="imgcolumn">
+                        <a><img src="/pics/Shading_Exercise.png" alt="Eye" width="220"></a>
+                        <a><img src="/pics/Untitled.png" alt="Face" width="220"></a>
+                    </div>
+                    <div class="imgcolumn">
+                        <a><img src="/pics/Eye.png" alt="Walking" width="220"></a>
+                        <a><img src="/pics/Walking_Doodle.png" alt="Tree" width="220"></a>
+                    </div>
+                    <div class="imgcolumn">
+                        <a><img src="/pics/Face_Final.png" alt="Eye" width="220"></a>
+                        <a><img src="/pics/Person_at_Night.png" alt="Face" width="220"></a>
+                    </div>
+                </div>
+            </section>
+            <script>
+                function workspaceSelect(selection) {
+                    var i, x;
+                    x = document.getElementsByClassName("workspace-tab");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    document.getElementById(selection).style.display = "block";
+                    x = document.getElementsByClassName("main-li");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].className = "main-li"
+                    }
+                }
+            </script>
+        </section>
+    </main>
+</body>
+</html>
