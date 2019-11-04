@@ -199,7 +199,7 @@ header input {
 .desc {
     display: none;
     position: absolute;
-    bottom: 30%;
+    bottom: 10%;
     max-width: 30%;
     padding-bottom: 1em;
     border-bottom: 1px solid #C5C0C5;
