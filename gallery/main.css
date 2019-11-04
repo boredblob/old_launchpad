@@ -174,7 +174,6 @@ header input {
     margin: 4%;
     animation: fade-in 0.25s ease-in;
     width: 90%;
-    height: 70vh;
     display: none;
     position: relative;
 }
@@ -182,13 +181,12 @@ header input {
 #imgbox {
     display: inline-block;
     max-width: 60%;
-    max-height: 100%;
     position: relative;
 }
 
 .image {
     max-width: 90%;
-    max-height: 100%;
+    max-height: 70vh;
     animation: fade-in 0.5s ease-in;
     box-shadow: 0.5em 0.7em 1em rgba(0,0,0,0.5);
 }
