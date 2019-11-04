@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Personal Launchpad</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <svg height="64" class="page-logo" width="64" aria-hidden="true">
+               <circle cx="32" cy="32" r="20" stroke="white" stroke-width="10" fill="red" fill-opacity="0" />
+            </svg>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a class="projects">Interactive Projects</a>
+                    <div class="projects-dropdown">
+                        <a href="/calc">Calculator</a>
+                        <a href="/kaomoji">Kaomoji Generator</a>
+                    </div>
+                </li>
+                <a href="."><li>"Art"</li></a>
+            </ul>
+        </nav>
+        <form>
+            <input type="text" placeholder="Search" />
+        </form>
+    </header>
+
+    <main id="main">
+        <nav class="main-nav-container">
+            <ul class="main-nav">
+                <li class="main-li selected-li" onclick="workspaceSelect(this);">About</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Bloopyfloop</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Tree</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Lobalug</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Paper Sky</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Ball</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Untitled</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Eye</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Hair</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Walking</li>
+                <li class="main-li" onclick="workspaceSelect(this);">Night</li>
+            </ul>
+        </nav>
+        <section class="workspace-tab" id="about">
+            <h3 class="about-title">Welcome to the gallery-thing!</h3>
+            <p class="about-paragraph">Here you'll be able to find the full-sized versions of any images I've put up here, as well as a little description thing about them.</p>
+        </section>
+        <section class="workspace-tab" id="gallery-tab">
+            <div id="imgbox"></div>
+            <aside class="desc-container">
+                <div class="desc" id="bloopyfloop">
+                    <h3 class="title">Bloopyfloop</h3>
+                    <p class="caption">A quick doodle for CoMC, I did this in the same style as the other CoMC thing, because the style's great for speed. And no, the name is beautiful.</p>
+                </div>
+                <div class="desc" id="tree">
+                    <h3 class="title">Life in a Felled Tree</h3>
+                    <p class="caption">THIS, oh my goodness gracious me, this blooming drawing. It took so much out of me because it took so long to do, plus as time went on, the fear of smudging it went exponentially up, and there are still visible smudge marks on it that I couldn't get rid of. At least it's sort of passable in looks, despite the dodgy scan making the contrast go all funny.</p>
+                </div>
+                <div class="desc" id="lobalug">
+                    <h3 class="title">Lobalug</h3>
+                    <p class="caption">An attempt at a more cartoonish digital painting I made for a CoMC task, but also took as a personal challenge and chance to try out a style that I now love for anything I don't want to spend an age on.</p>
+                </div>
+                <div class="desc" id="paper_sky">
+                    <h3 class="title">Paper Sky</h3>
+                    <p class="caption">Made this for the cover of a spotify playlist, not quite sure why I had the idea honestly, so I suppose it's up to you to interpret it as you wish.</p>
+                </div>
+                <div class="desc" id="ball">
+                    <h3 class="title">Shading Practice</h3>
+                    <p class="caption">After not really doing much arty stuff for a bit, I went back to some exercises, and this is the one I did for shading spheres using multiple colours for the light.</p>
+                </div>
+                <div class="desc" id="untitled">
+                    <h3 class="title">Untitled</h3>
+                    <p class="caption">This attempt at abstract art of sorts came about because I hadn't much inspiration, and just kind of scribbled all over the page in frustration.</p>
+                </div>
+                <div class="desc" id="eye">
+                    <h3 class="title">Eye</h3>
+                    <p class="caption">I originally made this for a spotify playlist cover, but then switched it out for something else when it didn't quite fit.</p>
+                </div>
+                <div class="desc" id="hair">
+                    <h3 class="title">Hair</h3>
+                    <p class="caption">Did this while learning how to draw hair digitally using an online tutorial to get the technique. At first, this was just some hair, but after deciding that the faceless demon I had created was pure nightmare fuel, I quickly whipped up an admitttedly badly shaded face.</p>
+                </div>
+                <div class="desc" id="walking">
+                    <h3 class="title">Walking</h3>
+                    <p class="caption">Actually a digitally coloured version of a pencil sketch I did when bored, which turned out rather passable, this is one of the first things I did digitally. I wasn't too great with the hand-eye coordination, so </p>
+                </div>
+                <div class="desc" id="night">
+                    <h3 class="title">Person at Night</h3>
+                    <p class="caption">This is actually the first thing I did digitally! I copied a different sketch I'd done with pencils, as a reference, and after a stupidly long time, I ended up with this.</p>
+                </div>
+            </aside>
+        </section>
+        <script>
+            function new_tab(id) {
+                var x = document.getElementById("imgbox");
+                var img = document.createElement("img");
+                
+                for (i = 0; i < x.children.length; i++) {x.children[i].remove();}
+                img.src = id + ".png";
+                img.className = "image";
+                x.appendChild(img);
+            }
+
+            function workspaceSelect(e) {
+                var id = e.innerHTML.toLowerCase().split(' ').join('_');                
+                var x = document.getElementsByClassName("workspace-tab");
+
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                if (id == "about") {x[0].style.display = "block";} else {x[1].style.display = "flex"; new_tab(id);}
+
+                x = document.getElementsByClassName("main-li");
+                for (i = 0; i < x.length; i++) {
+                    x[i].className = "main-li"
+                }
+                e.className += ' selected-li';
+                
+                var x1 = document.getElementsByClassName("desc");
+                for (i = 0; i < x1.length; i++) {
+                    x1[i].style.display = "none";
+                }
+                document.getElementById(id).style.display = "block";
+            }
+        </script>
+    </main>
+</body>
+</html>
