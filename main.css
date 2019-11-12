@@ -151,6 +151,7 @@ header input {
     width: 80%;
 }
 
+.hidden-link, .hidden-link:hover {color: #101010;}
 .link {color: #505560;}
 .link:hover {color: #959095;}
 
