@@ -71,9 +71,12 @@
                 }
             }, false);
 
-            main_nav.addEventListener("mouseleave", function( event ) {
+            function makeTransparent() {
                 border_.style.borderColor = "transparent";
-            },false);
+            }
+
+            main_nav.addEventListener("mouseleave", makeTransparent, false);
+            document.onresize = makeTransparent;
         </script>
         <section class="workspace-tab" id="about">
             <h3 class="about-title">Welcome to the gallery!</h3>
