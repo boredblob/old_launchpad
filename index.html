@@ -79,7 +79,7 @@
                                 }
                             }
                         }
-                        document.onresize = resize_;
+                        window.onresize = resize_;
                     </script>
                 </div>
             </div>
@@ -100,7 +100,7 @@
 
             main_nav.addEventListener("mouseover", function( event ) {
                 if (event.target.className === "main-li" || event.target.className === "main-li selected-li") {
-                    var containerRect = main_nav.getBoundingClientRect(),
+                    let containerRect = main_nav.getBoundingClientRect(),
                     elemRect = event.target.getBoundingClientRect(),
                     x = elemRect.left - containerRect.left - 1,
                     y = elemRect.top - containerRect.top - 1,
@@ -116,7 +116,7 @@
 
             function toSelected() {
                 let selected = document.getElementsByClassName("main-li selected-li")[0];
-                var containerRect = main_nav.getBoundingClientRect(),
+                let containerRect = main_nav.getBoundingClientRect(),
                 elemRect = selected.getBoundingClientRect(),
                 x = elemRect.left - containerRect.left - 1,
                 y = elemRect.top - containerRect.top - 1,
@@ -130,7 +130,7 @@
 
             main_nav.addEventListener("mouseleave", toSelected, false);
             toSelected();
-            document.onresize = toSelected();
+            window.onresize = toSelected;
             </script>
             <section class="workspace-tab" id="about">
                 <h3 class="about-title">Why this site exists, I guess...</h3>
