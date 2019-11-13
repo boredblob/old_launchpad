@@ -221,8 +221,8 @@ header input {
 
 #main-nav li {
     display: inline-block;
-    margin: 1em 1em 0 1em;
-    padding-bottom: 1em;
+    margin-top: 1em;
+    padding: 0 1em 1em 1em;
     cursor: pointer;
     border-bottom: 3px solid transparent;
     z-index: 1;
@@ -408,7 +408,7 @@ header input {
         width: 98%;
     }
     #main-nav li {
-        margin: 1em 0.5em 0 0.5em;
+        padding: 0 0.5em 1em 0.5em;
     }
 }
 
