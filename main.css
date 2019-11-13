@@ -33,7 +33,7 @@ header {
     cursor: default;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0px 1em 0.7em -1em rgba(0,0,0,0.5);
 }
 
@@ -76,7 +76,7 @@ header ul li:hover {
     background-color: #383A3F;
     min-width: 3em;
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
-    z-index: 2;
+    z-index: 3;
     border-radius: 0 0 0.5em 0.5em;
 }
 
@@ -221,7 +221,8 @@ header input {
 
 #main-nav li {
     display: inline-block;
-    padding: 1em;
+    margin: 1em 1em 0 1em;
+    padding-bottom: 1em;
     cursor: pointer;
     border-bottom: 3px solid transparent;
     z-index: 1;
@@ -402,6 +403,12 @@ header input {
     .imgcolumn {
         flex: 50%;
         max-width: calc(50% - 0.5em);
+    }
+    #main-nav {
+        width: 98%;
+    }
+    #main-nav li {
+        margin: 1em 0.5em 0 0.5em;
     }
 }
 
