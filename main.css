@@ -15,14 +15,16 @@ a {text-decoration: none;}
               user-select: none;
 }
 
+html {height: 100%;}
+
 body {
-    height: 100vh;
+    height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.2em;
 }
 
 header {
-    height: 10vh;
+    height: 10%;
     min-height: 2.5em;
     background-color: #222025;
     color: white;
@@ -67,12 +69,15 @@ header ul li:hover {
 }
 
 .projects-dropdown {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
     position: absolute;
     background-color: #383A3F;
     min-width: 3em;
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
     z-index: 2;
+    border-radius: 0 0 0.5em 0.5em;
 }
 
 .projects-dropdown a {
@@ -86,7 +91,7 @@ header ul li:hover {
 .projects-dropdown a:hover {color: #B5B0B5;}
 
 header ul li:hover .projects-dropdown {
-    display: block;
+    height: 4em;
 }
 
 header form {
@@ -114,7 +119,7 @@ header input {
 }
 
 .profile {
-    height: 100vh;
+    height: 100%;
     width: 20%;
     display: inline-block;
     box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
@@ -155,64 +160,46 @@ header input {
 .link {color: #505560;}
 .link:hover {color: #959095;}
 
-.twitter, .location, .email, .discord {
+#line-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.line {
+    margin: 0 0 0.5em 0.5em;
+    background-color: rgb(238, 194, 238);
+    border-radius: 5em;
+    box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
+    width: 3em;
+    height: 3em;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1s ease-in-out;
+    z-index: 1;
+}
+
+.label {
     font-size: 0.9em;
-    width: 90%;
-    max-width: 90%;
+    white-space: nowrap;
+    height: 1em;
+    display: inline-block;
+    position: relative;
+    bottom: 50%;
+    transform: translateY(50%);
+    border-top: 1px solid #A570A5;
 }
 
-.twitter, .email {word-wrap: break-word;}
-
-.twitter::before {
-    background-image: url("/twitter.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+.icon {
+    max-width: 2.5em;
+    max-height: 2.5em;
     display: inline-block;
-    width: 1.2em;
-    height: 1.2em;
-    content: "";
-    position: relative;
-    top: 0.2em;
-    margin-right: 0.5em;
+    padding: 0.2em;
+    transition: transform 1s ease-in-out;
+    transform: rotate(0deg);
 }
 
-.location::before {
-    background-image: url("/location-pin.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    display: inline-block;
-    width: 1.2em; 
-    height: 1.2em;
-    content: "";
-    position: relative;
-    top: 0.2em;
-    margin: 0 0.55em 0 0;
-}
-
-.email::before {
-    background-image: url("/mail.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    display: inline-block;
-    width: 1.2em; 
-    height: 1.2em;
-    content: "";
-    position: relative;
-    top: 0.2em;
-    margin: 0 0.55em 0 0;
-}
-
-.discord::before {
-    background-image: url("/discord.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    display: inline-block;
-    width: 1.4em; 
-    height: 1.4em;
-    content: "";
-    position: relative;
-    top: 0.2em;
-    margin: 0 0.4em 0 -0.1em;
+.line:hover .icon {
+    transform: rotate(360deg);
 }
 
 .workspace {
@@ -296,18 +283,23 @@ header input {
 
 #snippets-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 #descriptions {
     display: inline-block;
     width: 30%;
+    flex: 30%;
 }
 
 #source-code {
     display: inline-block;
     width: 70%;
+    flex: 70%;
 }
+
+#source-code div {border-radius: 1em;}
 
 .description {
     position: relative;
@@ -353,40 +345,24 @@ header input {
 }
 
 .imgrow {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 0.25em;
-  width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.25em;
+    width: 80%;
 }
 
 .imgcolumn {
-  flex: 25%;
-  max-width: calc(25% - 0.5em);
-  padding: 0 0.25em;
+    flex: 25%;
+    max-width: calc(25% - 0.5em);
+    padding: 0 0.25em;
 }
 
 .imgcolumn img {
-  margin-top: 0.5em;
-  vertical-align: middle;
-  width: 100%!important;
-  height: auto!important;
-  box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .imgcolumn {
-    flex: 50%;
-    max-width: calc(50% - 0.5em);
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .imgcolumn {
-    flex: 100%;
-    max-width: calc(100% - 0.5em);
-  }
+    margin-top: 0.5em;
+    vertical-align: middle;
+    width: 100%!important;
+    height: auto!important;
+    box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -398,5 +374,75 @@ header input {
     }
     .imgrow {
         width: 98%;
+    }
+    #descriptions {
+        flex: 50%;
+        width: 50%;
+    }
+    #source-code {
+        flex: 50%;
+        width: 50%;
+    }
+    .description {
+        width: 90%;
+        margin-left: 1em;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .twitter, .location, .email, .discord {
+        display: none;
+    }
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .imgcolumn {
+        flex: 50%;
+        max-width: calc(50% - 0.5em);
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .imgcolumn {
+        flex: 100%;
+        max-width: calc(100% - 0.5em);
+    }
+    .info {
+        font-size: 0.9em;
+        width: 100%;
+    }
+    .about-paragraph {
+        width: 100%;
+    }
+    #descriptions {
+        flex: 100%;
+        width: 100%;
+    }
+    #source-code {
+        flex: 100%;
+        width: 100%;
+    }
+    .icon {
+        max-width: 1.5em;
+        max-height: 1.5em;
+    }
+    .line {
+        width: 2em;
+        height: 2em;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .about-title {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    header {
+        height: 15%;
     }
 }

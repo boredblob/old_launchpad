@@ -31,7 +31,7 @@ header {
     cursor: default;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0px 1em 0.7em -1em rgba(0,0,0,0.5);
 }
 
@@ -70,7 +70,7 @@ header ul li:hover {color: #B5B0B5;}
     background-color: #383A3F;
     min-width: 3em;
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
-    z-index: 2;
+    z-index: 3;
 }
 
 .projects-dropdown a {
@@ -114,37 +114,43 @@ header input {
     margin: 1em 0 0 4%;
 }
 
-.main-nav {
+#main-nav {
     font-size: 0.9em;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     width: 80%;
-    border-bottom: 1px solid #C5C0C5;
+    border-top: 1px solid #A5A0A5;
+    border-bottom: 1px solid #A5A0A5;
+    position: relative;
 }
 
-.main-nav li {
+#main-nav li {
     display: inline-block;
+    flex-grow: 1;
+    text-align: center;
     padding: 1em;
     cursor: pointer;
+    border: 2px solid transparent;
+    z-index: 1;
 }
 
-.main-nav li:hover {
-    border-bottom: 1px solid #A5A0A5;
-    box-shadow: 0px 1em 0.7em -1em rgba(0,0,0,0.5); 
-}
-
-.main-nav li:nth-of-type(1) {
-    margin-left: 1em;
+#moving-border {
+    border: 2px solid transparent;
+    position: absolute;
+    padding: 1em;
+    pointer-events: none;
+    transition: all 0.2s ease-in;
 }
 
 .selected-li {
-    border-bottom: 3px solid #A570A5 !important;
+    border-color: #A570A5 !important;
 }
 
 @keyframes fade-in {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
@@ -175,12 +181,14 @@ header input {
     animation: fade-in 0.25s ease-in;
     width: 90%;
     display: none;
+    flex-wrap: wrap;
     position: relative;
 }
 
 #imgbox {
     display: inline-block;
-    max-width: 60%;
+    width: 60%;
+    flex: 60%;
     position: relative;
 }
 
@@ -191,8 +199,10 @@ header input {
     box-shadow: 0.5em 0.7em 1em rgba(0,0,0,0.5);
 }
 
-.desc-container {
+#desc-container {
     display: inline-block;
+    width: 40%;
+    flex: 40%;
     animation: fade-in 0.5s ease-in;
 }
 
@@ -200,7 +210,7 @@ header input {
     display: none;
     position: absolute;
     bottom: 10%;
-    max-width: 30%;
+    width: 30%;
     padding-bottom: 1em;
     border-bottom: 1px solid #C5C0C5;
     box-shadow: 0px 0.5em 0.2em -0.5em rgba(0,0,0,0.5);
@@ -217,4 +227,28 @@ header input {
 .caption {
     font-size: 0.9em;
     animation: fade-in 0.5s ease-in;
+}
+
+@media only screen and (max-width: 1000px) {
+    #imgbox {
+        width: 90%;
+        flex: 100%
+    }
+    #desc-container {
+        width: 100%;
+        flex: 100%;
+    }
+    .desc {
+        position: relative;
+        bottom: 0;
+        width: 80%;
+        margin-top: 1em;
+    }
+    .main-nav-container {
+        width: 95%;
+        margin: 1em auto 0 auto;
+    }
+    #main-nav {
+        width: 100%;
+    }
 }

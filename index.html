@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
     <meta charset="utf-8" />
     <title>Personal Launchpad</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.2" />
 </head>
 <body>
     <header>
@@ -33,15 +33,55 @@
 
     <main class="main">
         <aside class="profile">
-            <img class="pfp" src="/pfp.png"/>
+            <img class="pfp" src="./pfp.png"/>
             <div class="profile-text">
                 <h3 class="name">Omer</h3>
                 <h4 class="username">omerismyname</h4>
                 <p class="info">It's me, hello</p>
-                <p class="twitter"><a class="link" href="https://twitter.com/omerismyname">@omerismyname</a></p>
-                <p class="location"><a class="hidden-link" href="https://goo.gl/maps/ZLS8mSxb87Hdb5wd8">Somewhere, 7 miles from Nowhere</a></p>
-                <p class="email"><a class="link" href="mailto:ismynameomer@gmail.com">ismynameomer@gmail.com</a></p>
-                <p class="discord">Omer#7291</p>
+                <div id="line-container">
+                    <div class="line">
+                        <img class="icon" id="twitter-icon" src="./twitter.png"></img>
+                        <p class="label"><a class="link" href="https://twitter.com/omerismyname">@omerismyname</a></p>
+                    </div>
+                    <div class="line">
+                        <img class="icon" id="location-icon" src="./location-pin.png">
+                        <p class="label"><a class="hidden-link" href="https://goo.gl/maps/ZLS8mSxb87Hdb5wd8">Somewhere, 7 miles from Nowhere</a></p>
+                    </div>
+                    <div class="line">
+                        <img class="icon" id="email-icon" src="./mail.png">
+                        <p class="label"><a class="link" href="mailto:ismynameomer@gmail.com">ismynameomer@gmail.com</a></p>
+                    </div>
+                    <div class="line">
+                        <img class="icon" id="discord-icon" src="./discord.png">
+                        <p class="label">Omer#7291</p>
+                    </div>
+                    <script>
+                        var emVal = parseFloat(getComputedStyle(document.body).fontSize);
+                        var container = document.getElementById("line-container");
+                        var width_ = container.children[0].offsetWidth + "px";
+                        container.addEventListener("mouseover", function( event ) {
+                            if (event.target.className === "icon") {
+                                event.target.parentElement.style.width = event.target.parentElement.children[1].offsetWidth + (emVal * 4) + "px";
+                            }
+                        }, false);
+                        for (x of container.children) {
+                            x.addEventListener("mouseleave", function( event ) {
+                                if (event.target.className === "line") {
+                                    event.target.style.width = width_;
+                                }
+                            }, false);
+                        }
+                        function resize_() {
+                            if (width_ != container.children[0].offsetWidth + "px") {
+                                width_ = container.children[0].offsetWidth + "px";
+                                for (x of container.children) {
+                                    x.style.width = width_;
+                                }
+                            }
+                        }
+                        document.onresize = resize_;
+                    </script>
+                </div>
             </div>
         </aside>
         <section class="workspace">

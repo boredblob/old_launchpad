@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
     <meta charset="utf-8" />
     <title>Personal Launchpad</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.2" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.3" />
 </head>
 <body>
     <header>
@@ -33,7 +33,7 @@
 
     <main id="main">
         <nav class="main-nav-container">
-            <ul class="main-nav">
+            <ul id="main-nav">
                 <li class="main-li selected-li" onclick="workspaceSelect(this);">About</li>
                 <li class="main-li" onclick="workspaceSelect(this);">Neon</li>
                 <li class="main-li" onclick="workspaceSelect(this);">Bird</li>
@@ -47,15 +47,41 @@
                 <li class="main-li" onclick="workspaceSelect(this);">Hair</li>
                 <li class="main-li" onclick="workspaceSelect(this);">Walking</li>
                 <li class="main-li" onclick="workspaceSelect(this);">Night</li>
+                <div id="moving-border"></div>
             </ul>
         </nav>
+        <script>
+            var main_nav = document.getElementById("main-nav");
+            var border_ = document.getElementById("moving-border");
+            var emVal = parseFloat(getComputedStyle(document.body).fontSize);
+
+            main_nav.addEventListener("mouseover", function( event ) {
+                if (event.target.className === "main-li" || event.target.className === "main-li selected-li") {
+                    var containerRect = main_nav.getBoundingClientRect(),
+                    elemRect = event.target.getBoundingClientRect(),
+                    x = elemRect.left - containerRect.left - 1,
+                    y = elemRect.top - containerRect.top - 1,
+                    w = elemRect.width,
+                    h = elemRect.height;
+                    border_.style.left = x + "px";
+                    border_.style.top = y + "px";
+                    border_.style.width = w - (emVal * 2) + "px";
+                    border_.style.height = h - (emVal * 2) + "px";
+                    border_.style.borderColor = "#D5A0D5";
+                }
+            }, false);
+
+            main_nav.addEventListener("mouseleave", function( event ) {
+                border_.style.borderColor = "transparent";
+            },false);
+        </script>
         <section class="workspace-tab" id="about">
             <h3 class="about-title">Welcome to the gallery!</h3>
             <p class="about-paragraph">Here you'll be able to find the full-sized versions of any images I've put up here, as well as a little description thing about them.</p>
         </section>
         <section class="workspace-tab" id="gallery-tab">
             <div id="imgbox"></div>
-            <aside class="desc-container">
+            <aside id="desc-container">
                 <div class="desc" id="neon">
                     <h3 class="title">Neon</h3>
                     <p class="caption">A quick doodle using a black canvas because the idea felt quite cool, and more neon colours felt fun to just mess about with.</p>
