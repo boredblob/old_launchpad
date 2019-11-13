@@ -252,3 +252,15 @@ header input {
         width: 100%;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    header input {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    header input {
+        width: 40%;
+    }
+}

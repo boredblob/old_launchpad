@@ -391,14 +391,14 @@ header input {
     }
 }
 
-@media screen and (max-width: 1500px) {
+@media only screen and (max-width: 1500px) {
     .twitter, .location, .email, .discord {
         display: none;
     }
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .imgcolumn {
         flex: 50%;
         max-width: calc(50% - 0.5em);
@@ -406,7 +406,7 @@ header input {
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .imgcolumn {
         flex: 100%;
         max-width: calc(100% - 0.5em);
@@ -435,15 +435,21 @@ header input {
         height: 2em;
         margin-left: 0;
     }
-}
-
-@media screen and (max-width: 450px) {
-    .about-title {
-        font-size: 1em;
+    header input {
+        width: 75%;
     }
 }
 
-@media screen and (max-height: 500px) {
+@media only screen and (max-width: 450px) {
+    .about-title {
+        font-size: 1em;
+    }
+    header input {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-height: 500px) {
     header {
         height: 15%;
     }
