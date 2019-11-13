@@ -167,7 +167,7 @@ header input {
 
 .line {
     margin: 0 0 0.5em 0.5em;
-    background-color: rgb(238, 194, 238);
+    background-color: white;
     border-radius: 5em;
     box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
     width: 3em;
