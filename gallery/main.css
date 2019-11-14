@@ -65,12 +65,15 @@ header ul li a:hover {color: #B5B0B5;}
 header ul li:hover {color: #B5B0B5;}
 
 .projects-dropdown {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
     position: absolute;
     background-color: #383A3F;
     min-width: 3em;
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
     z-index: 3;
+    border-radius: 0 0 0.5em 0.5em;
 }
 
 .projects-dropdown a {
@@ -84,7 +87,7 @@ header ul li:hover {color: #B5B0B5;}
 .projects-dropdown a:hover {color: #B5B0B5;}
 
 header ul li:hover .projects-dropdown {
-    display: block;
+    height: 4em;
 }
 
 header form {
