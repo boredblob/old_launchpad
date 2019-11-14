@@ -58,7 +58,6 @@
                     <script>
                         var emVal = parseFloat(getComputedStyle(document.body).fontSize);
                         var container = document.getElementById("line-container");
-                        var width_ = container.children[0].offsetWidth + "px";
                         container.addEventListener("mouseover", function( event ) {
                             if (event.target.className === "icon") {
                                 event.target.parentElement.style.width = event.target.parentElement.children[1].offsetWidth + (emVal * 4) + "px";
@@ -67,19 +66,10 @@
                         for (x of container.children) {
                             x.addEventListener("mouseleave", function( event ) {
                                 if (event.target.className === "line") {
-                                    event.target.style.width = width_;
+                                    event.target.style.width = "";
                                 }
                             }, false);
                         }
-                        function resize_() {
-                            if (width_ != container.children[0].offsetWidth + "px") {
-                                width_ = container.children[0].offsetWidth + "px";
-                                for (x of container.children) {
-                                    x.style.width = width_;
-                                }
-                            }
-                        }
-                        window.onresize = resize_;
                     </script>
                 </div>
             </div>
