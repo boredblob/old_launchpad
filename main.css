@@ -341,7 +341,7 @@ header input {
     font-size: 0.8em;
 }
 
-#kaomoji-source, #calc-source {
+#radial-menu-source, #kaomoji-source, #calc-source {
     display: none;
     width: 90%;
     animation: fade-in 0.5s ease-in-out;
