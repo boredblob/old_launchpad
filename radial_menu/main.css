@@ -69,6 +69,6 @@ body {
 
 @media only screen and (max-width: 600px) {
   .menu-text {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
