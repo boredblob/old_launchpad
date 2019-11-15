@@ -138,33 +138,33 @@
         </section>
         <script>
             function new_tab(id) {
-                var x = document.getElementById("imgbox");
+                var imgbox = document.getElementById("imgbox");
                 var img = document.createElement("img");
                 
-                for (i = 0; i < x.children.length; i++) {x.children[i].remove();}
+                for (item of imgbox.children) {item.remove();}
                 img.src = id + ".png";
                 img.className = "image";
-                x.appendChild(img);
+                imgbox.appendChild(img);
             }
 
             function workspaceSelect(e) {
                 var id = e.innerHTML.toLowerCase().split(' ').join('_');                
-                var x = document.getElementsByClassName("workspace-tab");
+                var workspaces = document.getElementsByClassName("workspace-tab");
 
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
+                for (workspace of workspaces) {
+                    workspace.style.display = "none";
                 }
-                if (id == "about") {x[0].style.display = "block";} else {x[1].style.display = "flex"; new_tab(id);}
+                if (id == "about") {workspaces[0].style.display = "block";} else {workspaces[1].style.display = "flex"; new_tab(id);}
 
-                x = document.getElementsByClassName("main-li");
-                for (i = 0; i < x.length; i++) {
-                    x[i].className = "main-li"
+                list_items = document.getElementsByClassName("main-li");
+                for (item of list_items) {
+                    item.className = "main-li"
                 }
                 e.className += ' selected-li';
                 
-                var x1 = document.getElementsByClassName("desc");
-                for (i = 0; i < x1.length; i++) {
-                    x1[i].style.display = "none";
+                var descriptions = document.getElementsByClassName("desc");
+                for (desc of descriptions) {
+                    desc.style.display = "none";
                 }
                 document.getElementById(id).style.display = "block";
             }

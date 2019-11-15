@@ -211,15 +211,14 @@
             </section>
             <script>
                 function workspaceSelect(selection) {
-                    var i, x;
-                    x = document.getElementsByClassName("workspace-tab");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
+                    workspaces = document.getElementsByClassName("workspace-tab");
+                    for (workspace of workspaces) {
+                        workspace.style.display = "none";
                     }
                     document.getElementById(selection).style.display = "block";
-                    x = document.getElementsByClassName("main-li");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].className = "main-li"
+                    list_items = document.getElementsByClassName("main-li");
+                    for (item of list_items) {
+                        item.className = "main-li"
                     }
                 }
             </script>
