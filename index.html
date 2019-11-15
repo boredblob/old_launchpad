@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
     <meta charset="utf-8" />
     <title>Personal Launchpad</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.6" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.7" />
 </head>
 <body>
     <header>
@@ -21,6 +21,7 @@
                     <div class="projects-dropdown">
                         <a href="/calc">Calculator</a>
                         <a href="/kaomoji">Kaomoji Generator</a>
+                        <a href="/radial_menu">Radial Menu</a>
                     </div>
                 </li>
                 <a href="/gallery"><li>"Art"</li></a>
@@ -132,6 +133,12 @@
                 <div id="snippets-container">
                     <section id="descriptions">
                         <div class="description">
+                            <h3><a href="/radial_menu">Radial Menu</a></h3>
+                            <p class="date">15/11/2019</p>
+                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="radial-menu-source" other="calc-source">^</p>
+                            <p class="desc">A little attempt at making a fancier menu using SVGs and js.</p>
+                        </div>
+                        <div class="description">
                             <h3><a href="/kaomoji">Kaomoji Generator</a></h3>
                             <p class="date">14/10/2019</p>
                             <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="kaomoji-source" other="calc-source">^</p>
@@ -145,6 +152,9 @@
                         </div>
                     </section>
                     <aside id="source-code">
+                        <div id="radial-menu-source">
+                            <script src="https://gist.github.com/omerismyname/8b58f6f18d014cf15e137b6739b3d8cf.js"></script>
+                        </div>
                         <div id="calc-source">
                             <script src="https://gist.github.com/omerismyname/8b58f6f18d014cf15e137b6739b3d8cf.js"></script>
                         </div>
