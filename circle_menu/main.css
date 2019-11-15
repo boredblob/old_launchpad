@@ -1,0 +1,53 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #101215;
+}
+
+#button {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#main-ring {
+  stroke: rgb(75, 77, 104);
+  fill: transparent;
+  stroke-width: 120;
+  cursor: pointer;
+  transition: r 0.8s cubic-bezier(0.66, 1.8, 0.55, 1) 0s, stroke-width 0.5s cubic-bezier(0.66, 1.8, 0.65, 1) 0s;
+  filter: url(#bigger-shadow);
+}
+
+#inner-ring {
+  fill: #baaaff;
+  cursor: pointer;
+  transition: r 0.8s cubic-bezier(0.66, 1.8, 0.65, 1) 0s, fill 0.3s linear 0.2s;
+  filter: url(#bigger-shadow);
+  z-index: 2;
+}
+
+#main-ring:hover {
+  stroke-width: 140;
+}
+
+.sector {
+  cursor: pointer;
+  transition: transform 0.8s cubic-bezier(0.66, 1.8, 0.55, 1);
+  filter: url(#shadow);
+  z-index: 1;
+}
+
+#s-1 {fill: #FF9AA2;}
+#s-2 {fill: #FFB7B2;}
+#s-3 {fill: #FFDAC1;}
+#s-4 {fill: #E2F0CB;}
+#s-5 {fill: #B5EAD7;}
+#s-6 {fill: #C7CEEA;}
