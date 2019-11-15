@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-  <svg id="button" viewBox="-320 -320 640 640" xmlns="http://www.w3.org/2000/svg">
+  <svg id="button" viewBox="-320 -320 640 640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <filter id="shadow" width="640" height="640" x="-320" y="-320">
             <feDropShadow dx="3" dy="3" stdDeviation="3" style="flood-color: rgba(0, 0, 0, 0.3);" />
@@ -16,37 +16,70 @@
         <filter id="bigger-shadow" width="640" height="640" x="-320" y="-320">
             <feDropShadow dx="5" dy="5" stdDeviation="10" style="flood-color: rgba(0, 0, 0, 0.3);" />
         </filter>
+        <path id="sectorpath" d="M 100 -173 A 200 200 0 0 0 -100 -173 L 0 0 Z"></path>
+        <path id="curved" d="M -75 -130 A 150 150 0 0 1 75 -130"></path>
+        <path id="curved2" d="M 75 -146 A 150 150 0 0 0 -75 -146"></path>
     </defs>
     <circle id="main-ring" cx="0" cy="0" r="60" onclick="open_();" open="false"></circle>
-    <path id="s-6" class="sector" d="M 100.00000000000003 -173.20508075688772 A 200 200 0 0 0 -99.99999999999996 -173.20508075688775 L 0 0 Z" style="transform: rotate(300deg) scale(0, 0);"></path>
-    <path id="s-5" class="sector" d="M 100.00000000000003 -173.20508075688772 A 200 200 0 0 0 -99.99999999999996 -173.20508075688775 L 0 0 Z" style="transform: rotate(240deg) scale(0, 0);"></path>
-    <path id="s-4" class="sector" d="M 100.00000000000003 -173.20508075688772 A 200 200 0 0 0 -99.99999999999996 -173.20508075688775 L 0 0 Z" style="transform: rotate(180deg) scale(0, 0);"></path>
-    <path id="s-3" class="sector" d="M 100.00000000000003 -173.20508075688772 A 200 200 0 0 0 -99.99999999999996 -173.20508075688775 L 0 0 Z" style="transform: rotate(120deg) scale(0, 0);"></path>
-    <path id="s-2" class="sector" d="M 100.00000000000003 -173.20508075688772 A 200 200 0 0 0 -99.99999999999996 -173.20508075688775 L 0 0 Z" style="transform: rotate(60deg) scale(0, 0);"></path>
-    <path id="s-1" class="sector" d="M 100.00000000000003 -173.20508075688772 A 200 200 0 0 0 -99.99999999999996 -173.20508075688775 L 0 0 Z" style="transform: rotate(0deg) scale(0, 0);"></path>
+    <a href="#6"><use id="s-6" class="sector" xlink:href="#sectorpath" style="transform: rotate(300deg) scale(0, 0)"></use></a>
+    <text class="menu-text" style="transform: rotate(300deg) scale(0, 0)">
+      <textPath xlink:href="#curved" startOffset="50%" text-anchor="middle">Contact</textPath>
+    </text>
+    <a href="#5"><use id="s-5" class="sector" xlink:href="#sectorpath" style="transform: rotate(240deg) scale(0, 0)"></use></a>
+    <text class="menu-text" style="transform: rotate(240deg) scale(0, 0)">
+      <textPath xlink:href="#curved2" startOffset="50%" text-anchor="middle">Order</textPath>
+    </text>
+    <a href="#4"><use id="s-4" class="sector" xlink:href="#sectorpath" style="transform: rotate(180deg) scale(0, 0)"></use></a>
+    <text class="menu-text" style="transform: rotate(180deg) scale(0, 0)">
+      <textPath xlink:href="#curved2" startOffset="50%" text-anchor="middle">Oddment</textPath>
+    </text>
+    <a href="#3"><use id="s-3" class="sector" xlink:href="#sectorpath" style="transform: rotate(120deg) scale(0, 0)"></use></a>
+    <text class="menu-text" style="transform: rotate(120deg) scale(0, 0)">
+      <textPath xlink:href="#curved2" startOffset="50%" text-anchor="middle">Cactus</textPath>
+    </text>
+    <a href="#2"><use id="s-2" class="sector" xlink:href="#sectorpath" style="transform: rotate(60deg) scale(0, 0)"></use></a>
+    <text class="menu-text" style="transform: rotate(60deg) scale(0, 0)">
+      <textPath xlink:href="#curved" startOffset="50%" text-anchor="middle">About</textPath>
+    </text>
+    <a href="#1"><use id="s-1" class="sector" xlink:href="#sectorpath" style="transform: rotate(0deg) scale(0, 0)"></use></a>
+    <text class="menu-text" style="transform: rotate(0deg) scale(0, 0)">
+      <textPath xlink:href="#curved" startOffset="50%" text-anchor="middle">Home</textPath>
+    </text>
     <circle id="inner-ring" cx="0" cy="0" r="60" onclick="open_()"></circle>
   </svg>
   <script>
-    let sectors_ = document.getElementsByClassName("sector");
-    for (s of sectors_) {
+    let sectors = document.getElementsByClassName("sector");
+    for (s of sectors) {
       s.addEventListener("mouseover", function(event) {
-        e = event.target; e.style.transform = e.style.transform.replace("scale(1, 1)", "scale(1.1, 1.1)");
-        e.style.transitionDelay = "0s";
-        e.style.transitionDuration = "0.4s";
+        let e = event.target; let sibling = e.parentElement.nextSibling.nextSibling;
+        sibling.style.transform = e.style.transform = e.style.transform.replace("scale(1, 1)", "scale(1.1, 1.1)");
+        sibling.style.transitionDelay = e.style.transitionDelay = "0s";
+        sibling.style.transitionDuration = e.style.transitionDuration = "0.4s";
       }, false);
       s.addEventListener("mouseleave", function(event) {
-        e = event.target; e.style.transform = e.style.transform.replace("scale(1.1, 1.1)", "scale(1, 1)");
-        e.style.transitionDelay = "";
-        e.style.transitionDuration = "";
+        let e = event.target; let sibling = e.parentElement.nextSibling.nextSibling;
+        sibling.style.transform = e.style.transform = e.style.transform.replace("scale(1.1, 1.1)", "scale(1, 1)");
+        sibling.style.transitionDelay = e.style.transitionDelay = "";
+        sibling.style.transitionDuration = e.style.transitionDuration = "";
       }, false);
     }
 
     function scaleSectors(x) {
       let sectors = document.getElementsByClassName("sector");
+      let sibling;
       var i = 5;
       for (s of sectors) {
-        if (x == 0) {s.style.transitionDelay = i * 50 + "ms"} else {s.style.transitionDelay = "0." + i + "s"}
+        sibling = s.parentElement.nextSibling.nextSibling;
+        if (x == 0) {
+          s.style.transitionDelay = i * 50 + "ms";
+          sibling.style.transitionDelay = i * 50 + "ms";
+        }
+        else {
+          s.style.transitionDelay = "0." + i + "s";
+          sibling.style.transitionDelay = "0." + i + "s";
+        }
         s.style.transform = "rotate(" + i * 60 + "deg) scale(" + x + ", " + x + ")";
+        sibling.style.transform = "rotate(" + i * 60 + "deg) scale(" + x + ", " + x + ")";
         i--;
       }
     }

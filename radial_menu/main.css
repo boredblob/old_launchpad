@@ -57,3 +57,12 @@ body {
 #s-4 {fill: #E2F0CB;}
 #s-5 {fill: #B5EAD7;}
 #s-6 {fill: #C7CEEA;}
+
+.menu-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  fill: #101215;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.66, 1.8, 0.55, 1);
+}
