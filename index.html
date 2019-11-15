@@ -135,19 +135,19 @@
                         <div class="description">
                             <h3><a href="/radial_menu">Radial Menu</a></h3>
                             <p class="date">15/11/2019</p>
-                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="radial-menu-source" other="calc-source">^</p>
+                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="radial-menu-source">^</p>
                             <p class="desc">A little attempt at making a fancier menu using SVGs and js.</p>
                         </div>
                         <div class="description">
                             <h3><a href="/kaomoji">Kaomoji Generator</a></h3>
                             <p class="date">14/10/2019</p>
-                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="kaomoji-source" other="calc-source">^</p>
+                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="kaomoji-source">^</p>
                             <p class="desc">A tool used to generate kaomoji, which can then be copied and pasted elsewhere</p>
                         </div>
                         <div class="description">
                             <h3><a href="/calc">Calculator</a></h3>
                             <p class="date">09/10/2019</p>
-                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="calc-source" other="kaomoji-source">^</p>
+                            <p class="show-code noselect" onclick="e_click(this)" style="transform: none;" code="calc-source">^</p>
                             <p class="desc">Literally just a calculator - did it as a refresher for front-end coding</p>
                         </div>
                     </section>
@@ -165,15 +165,18 @@
                 </div>
                 <script>
                     function e_click(e) {
-                        if (e.style.transform == "none") {
-                            e.style.transform = "rotate(180deg)";
-                            document.getElementById(e.getAttribute("other")).style.display = "none";
-                            document.getElementById(e.getAttribute("code")).style.display = "block";
-                            var i, x;
-                            x = document.getElementsByClassName("show-code");
-                            for (i = 0; i < x.length; i++) {
-                                if (x[i].getAttribute("code") != e.getAttribute("code")) {x[i].style.transform = "none";}
+                        console.log(e.style.transform);
+                        if (e.style.transform === "none") {
+                            others = document.getElementsByClassName("show-code noselect");
+                            for (x of others) {
+                                x.style.transform = "none";
                             }
+                            e.style.transform = "rotate(180deg)";
+                            sources = document.getElementById("source-code").children;
+                            for (x of sources) {
+                                x.style.display = "none";
+                            }
+                            document.getElementById(e.getAttribute("code")).style.display = "block";
                         }
                         else {
                             e.style.transform = "none";
