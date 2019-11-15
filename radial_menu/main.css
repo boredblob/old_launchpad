@@ -8,6 +8,12 @@ body {
   background-color: #101215;
 }
 
+#main-ring, #inner-ring, .sector {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5em;
+  user-select: none;
+}
+
 #button {
   width: 70%;
   height: 70%;
