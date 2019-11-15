@@ -66,3 +66,9 @@ body {
   pointer-events: none;
   transition: transform 0.8s cubic-bezier(0.66, 1.8, 0.55, 1);
 }
+
+@media only screen and (max-width: 600px) {
+  .menu-text {
+    font-size: 16px;
+  }
+}
