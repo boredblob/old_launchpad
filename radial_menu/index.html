@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.1" />
 </head>
 <body>
-  <svg id="button" viewBox="-320 -320 640 640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <div class="button-container">
+  <svg id="button" viewBox="-320 -320 640 640" height="640" width="640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <filter id="shadow" width="640" height="640" x="-320" y="-320">
             <feDropShadow dx="3" dy="3" stdDeviation="3" style="flood-color: rgba(0, 0, 0, 0.3);" />
@@ -47,6 +48,7 @@
     </text>
     <circle id="inner-ring" cx="0" cy="0" r="60" onclick="open_()"></circle>
   </svg>
+  </div>
   <script>
     let sectors = document.getElementsByClassName("sector");
     for (s of sectors) {
