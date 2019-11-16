@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="button-container">
-    <svg id="button" viewBox="-320 -320 640 640" height="640" width="640" xmlns="http://www.w3.org/2000/svg">
+    <svg id="button" viewBox="-320 -320 640 640" height="640" width="640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
           <filter id="shadow" width="640" height="640" x="-320" y="-320">
               <feDropShadow dx="3" dy="3" stdDeviation="3" style="flood-color: rgba(0, 0, 0, 0.3);" />
@@ -24,27 +24,27 @@
       <circle id="main-ring" cx="0" cy="0" r="60" onclick="open_();" open="false"></circle>
       <a href="./"><use id="s-6" class="sector" href="#sectorpath" style="transform: rotate(300deg) scale(0, 0)"></use></a>
       <text class="menu-text" style="transform: rotate(300deg) scale(0, 0)">
-        <textPath href="#curved" startOffset="50%" text-anchor="middle">Contact</textPath>
+        <textPath href="#curved" xlink:href="#curved" startOffset="50%" text-anchor="middle">Contact</textPath>
       </text>
       <a href="./"><use id="s-5" class="sector" href="#sectorpath" style="transform: rotate(240deg) scale(0, 0)"></use></a>
       <text class="menu-text" style="transform: rotate(240deg) scale(0, 0)">
-        <textPath href="#curved2" startOffset="50%" text-anchor="middle">Order</textPath>
+        <textPath href="#curved2" xlink:href="#curved2" startOffset="50%" text-anchor="middle">Order</textPath>
       </text>
       <a href="./"><use id="s-4" class="sector" href="#sectorpath" style="transform: rotate(180deg) scale(0, 0)"></use></a>
       <text class="menu-text" style="transform: rotate(180deg) scale(0, 0)">
-        <textPath href="#curved2" startOffset="50%" text-anchor="middle">Oddment</textPath>
+        <textPath href="#curved2" xlink:href="#curved2" startOffset="50%" text-anchor="middle">Oddment</textPath>
       </text>
       <a href="./"><use id="s-3" class="sector" href="#sectorpath" style="transform: rotate(120deg) scale(0, 0)"></use></a>
       <text class="menu-text" style="transform: rotate(120deg) scale(0, 0)">
-        <textPath href="#curved2" startOffset="50%" text-anchor="middle">Cactus</textPath>
+        <textPath href="#curved2" xlink:href="#curved2" startOffset="50%" text-anchor="middle">Cactus</textPath>
       </text>
       <a href="./"><use id="s-2" class="sector" href="#sectorpath" style="transform: rotate(60deg) scale(0, 0)"></use></a>
       <text class="menu-text" style="transform: rotate(60deg) scale(0, 0)">
-        <textPath href="#curved" startOffset="50%" text-anchor="middle">About</textPath>
+        <textPath href="#curved" xlink:href="#curved" startOffset="50%" text-anchor="middle">About</textPath>
       </text>
       <a href="/"><use id="s-1" class="sector" href="#sectorpath" style="transform: rotate(0deg) scale(0, 0)"></use></a>
       <text class="menu-text" style="transform: rotate(0deg) scale(0, 0)">
-        <textPath href="#curved" startOffset="50%" text-anchor="middle">Home</textPath>
+        <textPath href="#curved" xlink:href="#curved" startOffset="50%" text-anchor="middle">Home</textPath>
       </text>
       <circle id="inner-ring" cx="0" cy="0" r="60" onclick="open_()"></circle>
     </svg>
