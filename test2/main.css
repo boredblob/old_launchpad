@@ -28,14 +28,12 @@ body {
   stroke-width: 120;
   cursor: pointer;
   transition: r 0.8s cubic-bezier(0.66, 1.8, 0.55, 1) 0s, stroke-width 0.5s cubic-bezier(0.66, 1.8, 0.65, 1) 0s;
-  filter: url(#bigger-shadow);
 }
 
 #inner-ring {
   fill: #baaaff;
   cursor: pointer;
   transition: r 0.8s cubic-bezier(0.66, 1.8, 0.65, 1) 0s, fill 0.3s linear 0.2s;
-  filter: url(#bigger-shadow);
   z-index: 2;
 }
 
@@ -46,7 +44,6 @@ body {
 .sector {
   cursor: pointer;
   transition: transform 0.8s cubic-bezier(0.66, 1.8, 0.55, 1);
-  filter: url(#shadow);
   z-index: 1;
 }
 
