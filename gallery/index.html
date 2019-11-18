@@ -141,7 +141,7 @@
                 var imgbox = document.getElementById("imgbox");
                 var img = document.createElement("img");
                 
-                for (item of imgbox.children) {item.remove();}
+                for (let item of imgbox.children) {item.remove();}
                 img.src = id + ".png";
                 img.className = "image";
                 imgbox.appendChild(img);
@@ -151,19 +151,19 @@
                 var id = e.innerHTML.toLowerCase().split(' ').join('_');                
                 var workspaces = document.getElementsByClassName("workspace-tab");
 
-                for (workspace of workspaces) {
+                for (let workspace of workspaces) {
                     workspace.style.display = "none";
                 }
                 if (id == "about") {workspaces[0].style.display = "block";} else {workspaces[1].style.display = "flex"; new_tab(id);}
 
                 list_items = document.getElementsByClassName("main-li");
-                for (item of list_items) {
+                for (let item of list_items) {
                     item.className = "main-li"
                 }
                 e.className += ' selected-li';
                 
                 var descriptions = document.getElementsByClassName("desc");
-                for (desc of descriptions) {
+                for (let desc of descriptions) {
                     desc.style.display = "none";
                 }
                 document.getElementById(id).style.display = "block";

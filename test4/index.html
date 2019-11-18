@@ -51,7 +51,7 @@
   </div>
   <script>
     let sectors = document.getElementsByClassName("sector");
-    for (s of sectors) {
+    for (let s of sectors) {
       s.addEventListener("mouseover", function(event) {
         let e = event.target; let sibling = e.parentElement.nextSibling.nextSibling;
         sibling.style.transform = e.style.transform = e.style.transform.replace("scale(1, 1)", "scale(1.1, 1.1)");
@@ -70,7 +70,7 @@
       let sectors = document.getElementsByClassName("sector");
       let sibling;
       var i = 5;
-      for (s of sectors) {
+      for (let s of sectors) {
         sibling = s.parentElement.nextSibling.nextSibling;
         if (x == 0) {
           s.style.transitionDelay = i * 50 + "ms";

@@ -70,7 +70,7 @@
       let sectors = document.getElementsByClassName("sector");
       let sibling;
       var i = 5;
-      for (s of sectors) {
+      for (let s of sectors) {
         sibling = s.parentElement.nextSibling.nextSibling;
         if (x == 0) {
           s.style.transitionDelay = i * 50 + "ms";

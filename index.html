@@ -64,7 +64,7 @@
                                 event.target.parentElement.style.width = event.target.parentElement.children[1].offsetWidth + (emVal * 4) + "px";
                             }
                         }, false);
-                        for (x of container.children) {
+                        for (let x of container.children) {
                             x.addEventListener("mouseleave", function( event ) {
                                 if (event.target.className === "line") {
                                     event.target.style.width = "";
@@ -211,12 +211,12 @@
             <script>
                 function workspaceSelect(selection) {
                     workspaces = document.getElementsByClassName("workspace-tab");
-                    for (workspace of workspaces) {
+                    for (let workspace of workspaces) {
                         workspace.style.display = "none";
                     }
                     document.getElementById(selection).style.display = "block";
                     list_items = document.getElementsByClassName("main-li");
-                    for (item of list_items) {
+                    for (let item of list_items) {
                         item.className = "main-li"
                     }
                 }
