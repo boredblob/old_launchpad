@@ -92,8 +92,16 @@ body {
   border-radius: 5px;
 }
 
+::-webkit-scrollbar:horizontal, ::-webkit-scrollbar-thumb:horizontal {
+  height: 5px;
+}
+
 ::-webkit-scrollbar-track {
   background: #222025;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -463,18 +463,26 @@ header input {
 }
 
 ::-webkit-scrollbar, ::-webkit-scrollbar-thumb {
-    width: 7px;
-    border-radius: 5px;
+  width: 7px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar:horizontal, ::-webkit-scrollbar-thumb:horizontal {
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #222025;
+  background: #222025;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(#A570A5, rgb(116, 81, 116));
+  background: linear-gradient(#A570A5, rgb(116, 81, 116));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(rgb(202, 135, 202), rgb(155, 109, 155)); 
+  background: linear-gradient(rgb(202, 135, 202), rgb(155, 109, 155)); 
 }
