@@ -1,0 +1,32 @@
+[
+  {
+    "type": "image",
+    "name": "Neon",
+    "file": "neon",
+    "tags": ["neon", "black", "lighting", "bored", "abstract"]
+  },
+  {
+    "type": "image",
+    "name": "Bird",
+    "file": "bird",
+    "tags": ["bird", "bored", "impressionist", "abstract", "doodle"]
+  },
+  {
+    "type": "image",
+    "name": "Bloopyfloop",
+    "file": "bloopyfloop",
+    "tags": ["bloopyfloop", "doodle", "cartoon", "comc", "myhogwarts", "mh", "quick"]
+  },
+  {
+    "type": "image",
+    "name": "Life in a Felled Tree",
+    "file": "tree",
+    "tags": ["tree", "pencil", "drawing", "shading"]
+  },
+  {
+    "type": "image",
+    "name": "Shading Exercise",
+    "file": "ball",
+    "tags": ["ball", "shading", "practice", "lighting"]
+  }
+]
