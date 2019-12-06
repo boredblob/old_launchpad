@@ -4,7 +4,9 @@
     border: none;
 }
 
-a {text-decoration: none;}
+a {text-decoration: none; color: inherit;}
+a:hover {color: #dfdcd7;}
+a.dark:hover {color: #777;}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -21,26 +23,38 @@ body {
     height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.2em;
+    background: #121012;
+    color: #fffcf5;
 }
 
 header {
-    height: 10%;
-    min-height: 2.5em;
-    background-color: #222025;
-    color: white;
+    height: 14%;
+    max-height: 70px;
+    min-height: 30px;
+    background: #c3f1ee;
+    color: #121012;
     display: flex;
     align-items: center;
     cursor: default;
     width: 100%;
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 2;
     box-shadow: 0px 1em 0.7em -1em rgba(0,0,0,0.5);
 }
 
 .page-logo {
-    fill: white;
+    height: 90%;
     padding: 0.5em;
-    margin-right: 0.5em;
+}
+
+.page-logo svg {
+    height: 100%;
+    stroke: #121012;
+}
+
+.page-logo svg circle {
+    fill: #fffcf5;
 }
 
 .navbar {
@@ -56,16 +70,8 @@ header ul {
 header ul li {
     display: inline-block;
     cursor: pointer;
-    color: white;
     white-space: nowrap;
     margin-right: 1em;
-}
-
-header ul li a {color: white;}
-header ul li a:hover {color: #B5B0B5;}
-
-header ul li:hover {
-    color: #B5B0B5;
 }
 
 .projects-dropdown {
@@ -73,7 +79,8 @@ header ul li:hover {
     overflow: hidden;
     transition: height 0.5s ease-in-out;
     position: absolute;
-    background-color: #383A3F;
+    background-color: #333;
+    color: #fffcf5;
     min-width: 3em;
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
     z-index: 3;
@@ -84,11 +91,10 @@ header ul li:hover {
     display: block;
     font-size: 0.8em;
     padding: 0.5em 0.5em 0.5em 0.5em;
-    color: white;
 }
 
 .projects::after { content:"﹀"; padding: 0.5em 0 0 0.5em;}
-.projects-dropdown a:hover {color: #B5B0B5;}
+.projects-dropdown a:hover {color: #dfdcd7;}
 
 header ul li:hover .projects-dropdown {
     height: 6em;
@@ -104,16 +110,15 @@ header form {
 header input {
     padding: 0.5em;
     font-size: 1em;
-    background: #383A3F;
+    background: #333;
     border: none;
     border-radius: 0.25em;
-    color: #B5B0B5;
+    color: #dfdcd7;
 }
 
 .main {
     width: 100%;
     height: 100%;
-    margin-top: 10vh;
     display: flex;
     position: absolute;
 }
@@ -141,13 +146,12 @@ header input {
 }
 
 .name {
-    color: #101010;
     font-size: 1.7em;
 }
 
 .username {
     font-size: 0.8em;
-    color: #505560;
+    color: #dfdcd7;
     font-weight: normal;
 }
 
@@ -156,10 +160,6 @@ header input {
     width: 80%;
 }
 
-.hidden-link, .hidden-link:hover {color: #101010;}
-.link {color: #505560;}
-.link:hover {color: #959095;}
-
 #line-container {
     display: flex;
     flex-direction: column;
@@ -167,7 +167,7 @@ header input {
 
 .line {
     margin: 0 0 0.5em 0.5em;
-    background-color: white;
+    background-color: #c3f1ee;
     border-radius: 5em;
     box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
     width: 3em;
@@ -186,7 +186,8 @@ header input {
     position: relative;
     bottom: 50%;
     transform: translateY(50%);
-    border-top: 1px solid #A570A5;
+    border-top: 1px solid #ffcfff;
+    color: #121012;
 }
 
 .icon {
@@ -215,7 +216,7 @@ header input {
     font-size: 0.9em;
     display: flex;
     width: 80%;
-    border-bottom: 1px solid #C5C0C5;
+    border-bottom: 1px solid #ccc7bf;
     position: relative;
 }
 
@@ -233,7 +234,7 @@ header input {
 }
 
 #underline {
-    border-bottom: 3px solid #A570A5;
+    border-bottom: 3px solid #ffcfff;
     position: absolute;
     padding: 1em;
     pointer-events: none;
@@ -306,23 +307,21 @@ header input {
 
 .description {
     position: relative;
-    border: solid;
-    border-width: thin;
-    border-color: #B5B0B5;
+    background: #c3f1ee;
     width: 65%;
     border-radius: 0.5em;
     box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
     margin: 0 0 1em 2em;
+    color: #333;
 }
 
-.description a {color: black;}
+.description a {color: #121012;}
 
 .description h3 {
     display: inline-block;
 }
 
 .date {
-    color: #505560;
     font-size: 0.6em;
     display: inline-block;
 }
@@ -341,11 +340,16 @@ header input {
     font-size: 0.8em;
 }
 
-#radial-menu-source, #kaomoji-source, #calc-source {
+#source-code > div {
     display: none;
     width: 90%;
     animation: fade-in 0.5s ease-in-out;
+    filter: brightness(2.5) saturate(0.6);
 }
+
+#source-code > div div, .highlight {background: black !important;}
+.gist-file, .gist-data {border: 0px !important;}
+.gist .blob-num {color: #a0814f !important;}
 
 .imgrow {
     display: flex;
@@ -363,8 +367,8 @@ header input {
 .imgcolumn img {
     margin-top: 0.5em;
     vertical-align: middle;
-    width: 100%!important;
-    height: auto!important;
+    width: 100% !important;
+    height: auto !important;
     box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
 }
 
@@ -472,7 +476,7 @@ header input {
 }
 
 ::-webkit-scrollbar-track {
-  background: #222025;
+  background: #121012;
 }
 
 ::-webkit-scrollbar-track:horizontal {
@@ -480,9 +484,9 @@ header input {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#A570A5, rgb(116, 81, 116));
+  background: #ffcfff;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(rgb(202, 135, 202), rgb(155, 109, 155)); 
+  background: #ca87ca; 
 }
