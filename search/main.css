@@ -99,10 +99,10 @@ main .result {
 }
 
 main .result a {
+  display: block;
   margin-left: 1em;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.5rem;
-  text-decoration: none;
 }
