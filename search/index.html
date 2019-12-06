@@ -35,7 +35,7 @@
         Results.removeChild(Results.firstChild);
       };
 
-      fetch("https://am-i.cool/search/data.json", {
+      fetch("data.json", {
         cache: "no-cache"
       })
       .then(response => response.json())
@@ -61,7 +61,7 @@
               let result = document.createElement("div");
               let text = document.createElement("a");
               text.className = "dark";
-              text.href = "/gallery/" + r.file + ".png";
+              text.href = "/image?i=" + r.file;
               text.innerHTML = r.name;
               result.className = "result";
               result.style.transitionDuration = ((i * 2) / 10) + "s";

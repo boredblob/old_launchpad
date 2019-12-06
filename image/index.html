@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <title>Personal Launchpad</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.0" />
+</head>
+<body>
+  <div class="page-logo">
+    <a href="/">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
+        </svg>
+    </a>
+  </div>
+  <img class="image" alt="No image found with that ID"></img>
+  <div class="footer">
+    <p class="title">No title found</p>
+  </div>
+  <script>
+    var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
+    document.querySelector(".image").src = "../gallery/" + imageID + ".png";
+    fetch("https://am-i.cool/search/data.json", {
+      cache: "no-cache"
+     })
+    .then(response => response.json())
+    .then(data => {
+      for (let i of data) {
+        if (i.file == imageID) {
+          document.querySelector(".footer .title").innerHTML = i.name;
+        }
+      }
+    })
+    .catch((e) => {console.log("Error: " + e);});
+  </script>
+</body>
+</html>
