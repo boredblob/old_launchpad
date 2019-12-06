@@ -59,11 +59,13 @@
             var i = 1;
             for (let r of searchResult) {
               let result = document.createElement("div");
-              let p = document.createElement("p");
-              p.innerHTML = r.name;
+              let text = document.createElement("a");
+              text.className = "dark";
+              text.href = r.file
+              text.innerHTML = "/gallery/" + r.name + ".png";
               result.className = "result";
               result.style.transitionDuration = ((i * 2) / 10) + "s";
-              result.appendChild(p);
+              result.appendChild(text);
               Results.appendChild(result);
               i++;
             };

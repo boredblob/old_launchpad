@@ -98,10 +98,11 @@ main .result {
   transition: opacity 0.3s ease-in-out;
 }
 
-main .result p {
+main .result a {
   margin-left: 1em;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.5rem;
+  text-decoration: none;
 }
