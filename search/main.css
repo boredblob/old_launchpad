@@ -106,3 +106,28 @@ main .result a {
   transform: translateY(-50%);
   font-size: 1.5rem;
 }
+
+::-webkit-scrollbar, ::-webkit-scrollbar-thumb {
+  width: 7px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar:horizontal, ::-webkit-scrollbar-thumb:horizontal {
+  height: 5px;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background: #121012;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffcfff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ca87ca; 
+}
