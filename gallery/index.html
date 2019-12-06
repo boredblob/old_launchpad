@@ -25,12 +25,14 @@
                         <a href="/radial_menu">Radial Menu</a>
                     </div>
                 </li>
-                <a class="dark" href="."><li>"Art"</li></a>
+                <li>
+                    <a class="dark" href=".">"Art"</a>
+                </li>
             </ul>
         </nav>
-        <div class="search-form">
-            <input type="text" class="searchbar" placeholder="Search" onkeydown="__search()" />
-        </div>
+        <form onsubmit="__search(); return false;">
+            <input type="text" class="searchbar" placeholder="Search" />
+        </form>
         <script src="/search.js"></script>
     </header>
 

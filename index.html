@@ -26,13 +26,13 @@
                     </div>
                 </li>
                 <li>
-                    <a class="dark" href="/gallery"><li>"Art"</li></a>
+                    <a class="dark" href="/gallery">"Art"</a>
                 </li>
             </ul>
         </nav>
-        <div class="search-form">
-                <input type="text" class="searchbar" placeholder="Search" onkeydown="__search()" />
-        </div>
+        <form onsubmit="__search(); return false;">
+            <input type="text" class="searchbar" placeholder="Search" onkeydown="__search()" />
+        </form>
         <script src="/search.js"></script>
     </header>
 

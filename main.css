@@ -100,14 +100,14 @@ header ul li:hover .projects-dropdown {
     height: 6em;
 }
 
-header .search-form {
+header form {
     display: flex;
     width: 50%;
     justify-content: flex-end;
     padding-right: 2em;
 }
 
-header .search-form input {
+header form input {
     padding: 0.5em;
     font-size: 1em;
     background: #333;
@@ -457,9 +457,6 @@ header .search-form input {
 @media only screen and (max-width: 450px) {
     .about-title {
         font-size: 1em;
-    }
-    header input {
-        width: 40%;
     }
 }
 
