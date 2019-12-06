@@ -10,22 +10,22 @@
 </head>
 <body>
     <header>
-        <a href="/">
-            <svg height="64" class="page-logo" width="64" aria-hidden="true">
-               <circle cx="32" cy="32" r="20" stroke="white" stroke-width="10" fill="red" fill-opacity="0" />
+        <a href="/" class="page-logo">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+               <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
             </svg>
         </a>
         <nav class="navbar">
             <ul>
                 <li>
-                    <a class="projects">Interactive Stuff</a>
+                    <a class="projects dark">Interactive Stuff</a>
                     <div class="projects-dropdown">
-                        <a href="/kaomoji">Kaomoji Generator</a>
                         <a href="/calc">Calculator</a>
+                        <a href="/kaomoji">Kaomoji Generator</a>
                         <a href="/radial_menu">Radial Menu</a>
                     </div>
                 </li>
-                <a href="."><li>"Art"</li></a>
+                <a class="dark" href="."><li>"Art"</li></a>
             </ul>
         </nav>
         <form>
@@ -36,19 +36,19 @@
     <main id="main">
         <nav class="main-nav-container">
             <ul id="main-nav">
-                <li class="main-li selected-li" onclick="workspaceSelect(this);">About</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Neon</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Bird</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Bloopyfloop</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Tree</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Lobalug</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Paper Sky</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Ball</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Untitled</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Eye</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Hair</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Walking</li>
-                <li class="main-li" onclick="workspaceSelect(this);">Night</li>
+                <li class="selected-li" onclick="workspaceSelect(this);">About</li>
+                <li onclick="workspaceSelect(this);">Neon</li>
+                <li onclick="workspaceSelect(this);">Bird</li>
+                <li onclick="workspaceSelect(this);">Bloopyfloop</li>
+                <li onclick="workspaceSelect(this);">Tree</li>
+                <li onclick="workspaceSelect(this);">Lobalug</li>
+                <li onclick="workspaceSelect(this);">Paper Sky</li>
+                <li onclick="workspaceSelect(this);">Ball</li>
+                <li onclick="workspaceSelect(this);">Untitled</li>
+                <li onclick="workspaceSelect(this);">Eye</li>
+                <li onclick="workspaceSelect(this);">Hair</li>
+                <li onclick="workspaceSelect(this);">Walking</li>
+                <li onclick="workspaceSelect(this);">Night</li>
                 <div id="moving-border"></div>
             </ul>
         </nav>
@@ -58,9 +58,10 @@
             var emVal = parseFloat(getComputedStyle(document.body).fontSize);
 
             main_nav.addEventListener("mouseover", function( event ) {
-                if (event.target.className === "main-li" || event.target.className === "main-li selected-li") {
+                var e = event.target;
+                if (e.tagName == "LI" && e.parentNode.id == "main-nav") {
                     var containerRect = main_nav.getBoundingClientRect(),
-                    elemRect = event.target.getBoundingClientRect(),
+                    elemRect = e.getBoundingClientRect(),
                     x = elemRect.left - containerRect.left - 1,
                     y = elemRect.top - containerRect.top - 1,
                     w = elemRect.width,
@@ -69,7 +70,7 @@
                     border_.style.top = y + "px";
                     border_.style.width = w - (emVal * 2) + "px";
                     border_.style.height = h - (emVal * 2) + "px";
-                    border_.style.borderColor = "#D5A0D5";
+                    border_.style.borderColor = "#777";
                 }
             }, false);
 
@@ -157,11 +158,11 @@
                 }
                 if (id == "about") {workspaces[0].style.display = "block";} else {workspaces[1].style.display = "flex"; new_tab(id);}
 
-                list_items = document.getElementsByClassName("main-li");
+                list_items = document.getElementById("main-nav").getElementsByTagName("li");
                 for (let item of list_items) {
-                    item.className = "main-li"
+                    item.className = "";
                 }
-                e.className += ' selected-li';
+                e.className = "selected-li";
                 
                 var descriptions = document.getElementsByClassName("desc");
                 for (let desc of descriptions) {

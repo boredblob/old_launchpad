@@ -475,7 +475,7 @@ header input {
   height: 5px;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
   background: #121012;
 }
 
