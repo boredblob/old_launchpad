@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
   <title>Personal Launchpad</title>
@@ -23,7 +23,7 @@
   <script>
     var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
     document.querySelector(".image").src = "../gallery/" + imageID + ".png";
-    fetch("https://am-i.cool/search/data.json", {
+    fetch("/search/data.json", {
       cache: "no-cache"
      })
     .then(response => response.json())
