@@ -104,7 +104,7 @@ header form {
     display: flex;
     width: 50%;
     justify-content: flex-end;
-    padding-right: 2em;
+    padding-right: 1.5vw;
 }
 
 header form input {
@@ -450,19 +450,13 @@ header form input {
         margin-left: 0;
     }
     header input {
-        width: 75%;
+        width: 90%;
     }
 }
 
 @media only screen and (max-width: 450px) {
     .about-title {
         font-size: 1em;
-    }
-}
-
-@media only screen and (max-height: 500px) {
-    header {
-        height: 15%;
     }
 }
 
