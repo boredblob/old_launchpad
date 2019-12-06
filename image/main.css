@@ -47,6 +47,7 @@ body {
 .image {
   height: 100%;
   width: auto;
+  max-width: 100%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
