@@ -82,9 +82,16 @@ main .results > p {
   margin-left: 1em;
 }
 
+main .results:nth-of-type(2n) {
+  background: #b9a87f;
+}
+
+main .results:nth-of-type(2n + 1) {
+  background: #c3f1ee;
+}
+
 main .result {
   height: 6vmin;
-  background: #b9a87f;
   margin-top: 0.5em;
   border-radius: 3vmin;
   opacity: 0;
