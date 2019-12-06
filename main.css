@@ -371,6 +371,8 @@ header .search-form input {
     width: 100% !important;
     height: auto !important;
     box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
+    outline: none;
+    background: #b9a87f;
 }
 
 @media only screen and (max-width: 1000px) {
