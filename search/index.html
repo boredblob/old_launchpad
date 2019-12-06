@@ -61,8 +61,8 @@
               let result = document.createElement("div");
               let text = document.createElement("a");
               text.className = "dark";
-              text.href = r.file
-              text.innerHTML = "/gallery/" + r.name + ".png";
+              text.href = "/gallery/" + r.file + ".png";
+              text.innerHTML = r.name;
               result.className = "result";
               result.style.transitionDuration = ((i * 2) / 10) + "s";
               result.appendChild(text);
