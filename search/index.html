@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+  <meta charset="utf-8" />
+  <title>Personal Launchpad</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+  <div class="page-logo">
+    <a href="../index.html">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
+        </svg>
+    </a>
+  </div>
+  <main>
+    <h3>Search results</h3>
+    <input class="search-bar" type="text" placeholder="Search" onkeydown="__search()" />
+    <script src="/search.js"></script>
+    <div class="results">
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
+  <script>
+    var Results = document.querySelector("main .results");
+    var search = window.location.href.split("?")[1].split("s=")[1].split("&")[0];
+    var searchbar = document.querySelector("main .search-bar")
+    searchbar.value = search;
+
+    function _search() {
+      while (Results.firstChild) {
+        Results.removeChild(Results.firstChild);
+      };
+
+      fetch("https://am-i.cool/search/data.json", {
+        cache: "no-cache"
+      })
+      .then(response => response.json())
+      .then(data => {
+        var options = {
+          keys: [{
+            name: 'name',
+            weight: 0.7
+          }, {
+            name: 'tags',
+            weight: 0.3
+          }]
+        };
+        let fuse = new Fuse(data, options);
+
+
+        if (search !== undefined) {
+          searchResult = fuse.search(searchbar.value);
+          
+          if (searchResult.length > 0) {
+            var i = 1;
+            for (let r of searchResult) {
+              let result = document.createElement("div");
+              let p = document.createElement("p");
+              p.innerHTML = r.name;
+              result.className = "result";
+              result.style.transitionDuration = ((i * 2) / 10) + "s";
+              result.appendChild(p);
+              Results.appendChild(result);
+              i++;
+            };
+            setTimeout(() => {for (let r of document.querySelector("main .results").children) {r.style.opacity = "1"}}, 1);
+          }
+          else {
+            let p = document.createElement("p");
+            p.innerHTML = "No results"
+            document.querySelector("main .results").appendChild(p);
+          }
+        }
+      })
+      .catch((e) => console.log("Error fetching search data\n" + e));
+    };
+
+    _search();
+  </script>
+</body>
+</html>

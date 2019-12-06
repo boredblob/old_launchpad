@@ -3,30 +3,72 @@
     "type": "image",
     "name": "Neon",
     "file": "neon",
-    "tags": ["neon", "black", "lighting", "bored", "abstract"]
+    "tags": ["neon", "black", "lighting", "bored", "abstract", "digital"]
   },
   {
     "type": "image",
     "name": "Bird",
     "file": "bird",
-    "tags": ["bird", "bored", "impressionist", "abstract", "doodle"]
+    "tags": ["bird", "bored", "impressionist", "abstract", "doodle", "digital"]
   },
   {
     "type": "image",
     "name": "Bloopyfloop",
     "file": "bloopyfloop",
-    "tags": ["bloopyfloop", "doodle", "cartoon", "comc", "myhogwarts", "mh", "quick"]
+    "tags": ["bloopyfloop", "doodle", "cartoon", "comc", "myhogwarts", "mh", "quick", "digital"]
   },
   {
     "type": "image",
     "name": "Life in a Felled Tree",
     "file": "tree",
-    "tags": ["tree", "pencil", "drawing", "shading"]
+    "tags": ["tree", "pencil", "drawing", "shading", "real"]
+  },
+  {
+    "type": "image",
+    "name": "Lobalug",
+    "file": "lobalug",
+    "tags": ["lobalug", "cartoon", "comc", "quick", "doodle", "digital"]
+  },
+  {
+    "type": "image",
+    "name": "Paper Sky",
+    "file": "paper_sky",
+    "tags": ["paper", "sky", "eye", "omer", "photo", "spotify", "digital"]
   },
   {
     "type": "image",
     "name": "Shading Exercise",
     "file": "ball",
-    "tags": ["ball", "shading", "practice", "lighting"]
+    "tags": ["ball", "shading", "practice", "lighting", "digital"]
+  },
+  {
+    "type": "image",
+    "name": "Untitled",
+    "file": "untitled",
+    "tags": ["untitled", "abstract", "bored", "quick", "scribble", "mess", "digital"]
+  },
+  {
+    "type": "image",
+    "name": "Eye",
+    "file": "eye",
+    "tags": ["eye", "face", "sad", "pencil", "doodle", "spotify", "digital"]
+  },
+  {
+    "type": "image",
+    "name": "Hair",
+    "file": "hair",
+    "tags": ["hair", "face", "person", "illustration", "digital"]
+  },
+  {
+    "type": "image",
+    "name": "Walking",
+    "file": "walking",
+    "tags": ["walking", "cartoon", "drawing", "quick", "doodle", "first", "digital"]
+  },
+  {
+    "type": "image",
+    "name": "Person at Night",
+    "file": "night",
+    "tags": ["night", "person", "first", "quick", "doodle", "moon", "sketch", "cartoon", "digital"]
   }
 ]

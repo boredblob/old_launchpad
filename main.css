@@ -100,20 +100,21 @@ header ul li:hover .projects-dropdown {
     height: 6em;
 }
 
-header form {
+header .search-form {
     display: flex;
     width: 50%;
     justify-content: flex-end;
     padding-right: 2em;
 }
 
-header input {
+header .search-form input {
     padding: 0.5em;
     font-size: 1em;
     background: #333;
     border: none;
     border-radius: 0.25em;
     color: #dfdcd7;
+    outline: none;
 }
 
 .main {
