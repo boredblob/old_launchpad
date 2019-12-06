@@ -22,7 +22,7 @@
   </div>
   <script>
     var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
-    document.querySelector(".image").src = "../gallery/" + imageID + ".png";
+    document.querySelector(".image").src = "/gallery/" + imageID + ".png";
     fetch("/search/data.json", {
       cache: "no-cache"
      })
