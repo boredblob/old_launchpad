@@ -3,72 +3,84 @@
     "type": "image",
     "name": "Neon",
     "file": "neon",
-    "tags": ["neon", "black", "lighting", "bored", "abstract", "digital"]
+    "tags": ["neon", "black", "lighting", "bored", "abstract", "digital"],
+    "description": "A quick doodle using a black canvas because the idea felt quite cool, and more neon colours felt fun to just mess about with."
   },
   {
     "type": "image",
     "name": "Bird",
     "file": "bird",
-    "tags": ["bird", "bored", "impressionist", "abstract", "doodle", "digital"]
+    "tags": ["bird", "bored", "impressionist", "abstract", "doodle", "digital"],
+    "description": "If you can't tell, this is supposed to be a bird I guess. This started in a bored doodle of a more cartoonish bird, but I decided to add some colour and kinda just wanted to throw some paint around, which I ended up doing in a more literal sense. I've never done things in this sort of style before and I've got to say, I rather like it."
   },
   {
     "type": "image",
     "name": "Bloopyfloop",
     "file": "bloopyfloop",
-    "tags": ["bloopyfloop", "doodle", "cartoon", "comc", "myhogwarts", "mh", "quick", "digital"]
+    "tags": ["bloopyfloop", "doodle", "cartoon", "comc", "myhogwarts", "mh", "quick", "digital"],
+    "description": "A quick doodle for CoMC, I did this in the same style as the other CoMC thing, because the style's great for speed. And no, the name is beautiful."
   },
   {
     "type": "image",
     "name": "Life in a Felled Tree",
     "file": "tree",
-    "tags": ["tree", "pencil", "drawing", "shading", "real"]
+    "tags": ["tree", "pencil", "drawing", "shading", "real"],
+    "description": "THIS, oh my goodness gracious me, this blooming drawing. It took so much out of me because it took so long to do, plus as time went on, the fear of smudging it went exponentially up, and there are still visible smudge marks on it that I couldn't get rid of. At least it's sort of passable in looks, despite the dodgy scan making the contrast go all funny."
   },
   {
     "type": "image",
     "name": "Lobalug",
     "file": "lobalug",
-    "tags": ["lobalug", "cartoon", "comc", "quick", "doodle", "digital"]
+    "tags": ["lobalug", "cartoon", "comc", "quick", "doodle", "digital"],
+    "description": "An attempt at a more cartoonish digital painting I made for a CoMC task, but also took as a personal challenge and chance to try out a style that I now love for anything I don't want to spend an age on."
   },
   {
     "type": "image",
     "name": "Paper Sky",
     "file": "paper_sky",
-    "tags": ["paper", "sky", "eye", "omer", "photo", "spotify", "digital"]
+    "tags": ["paper", "sky", "eye", "omer", "photo", "spotify", "digital"],
+    "description": "Made this for the cover of a spotify playlist, not quite sure why I had the idea honestly, so I suppose it's up to you to interpret it as you wish."
   },
   {
     "type": "image",
     "name": "Shading Exercise",
     "file": "ball",
-    "tags": ["ball", "shading", "practice", "lighting", "digital"]
+    "tags": ["ball", "shading", "practice", "lighting", "digital"],
+    "description": "After not really doing much arty stuff for a bit, I went back to some exercises, and this is the one I did for shading spheres using multiple colours for the light."
   },
   {
     "type": "image",
     "name": "Untitled",
     "file": "untitled",
-    "tags": ["untitled", "abstract", "bored", "quick", "scribble", "mess", "digital"]
+    "tags": ["untitled", "abstract", "bored", "quick", "scribble", "mess", "digital"],
+    "description": "This attempt at abstract art of sorts came about because I hadn't much inspiration, and just kind of scribbled all over the page in frustration."
   },
   {
     "type": "image",
     "name": "Eye",
     "file": "eye",
-    "tags": ["eye", "face", "sad", "pencil", "doodle", "spotify", "digital"]
+    "tags": ["eye", "face", "sad", "pencil", "doodle", "spotify", "digital"],
+    "description": "I originally made this for a spotify playlist cover, but then switched it out for something else when it didn't quite fit."
   },
   {
     "type": "image",
     "name": "Hair",
     "file": "hair",
-    "tags": ["hair", "face", "person", "illustration", "digital"]
+    "tags": ["hair", "face", "person", "illustration", "digital"],
+    "description": "Did this while learning how to draw hair digitally using an online tutorial to get the technique. At first, this was just some hair, but after deciding that the faceless demon I had created was pure nightmare fuel, I quickly whipped up an admitttedly badly shaded face."
   },
   {
     "type": "image",
     "name": "Walking",
     "file": "walking",
-    "tags": ["walking", "cartoon", "drawing", "quick", "doodle", "first", "digital"]
+    "tags": ["walking", "cartoon", "drawing", "quick", "doodle", "first", "digital"],
+    "description": "Done just after the my first digital thing, this is just a digitally coloured version of a pencil sketch I did when bored. I wasn't too great with the hand-eye coordination with the drawing tablet, so instead of practising with drawing exercises I chose to trace an old drawing, since that would be more fun."
   },
   {
     "type": "image",
     "name": "Person at Night",
     "file": "night",
-    "tags": ["night", "person", "first", "quick", "doodle", "moon", "sketch", "cartoon", "digital"]
+    "tags": ["night", "person", "first", "quick", "doodle", "moon", "sketch", "cartoon", "digital"],
+    "description": "This is actually the first thing I did digitally! I copied a different sketch I'd done with pencils, as a reference, and after a stupidly long time, I ended up with this."
   }
 ]

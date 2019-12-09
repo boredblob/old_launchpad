@@ -16,6 +16,14 @@
         </svg>
     </a>
   </div>
+  <div class="description-container">
+    <div class="description" open="false">No description found.</div>
+    <button class="info-button">
+      <svg viewBox="0 0 72 24" class="chevron">
+        <polyline points="68 6 36 12 4 6"></polyline>
+      </svg>
+    </button>
+  </div>
   <img class="image" alt="No image found with that ID"></img>
   <div class="footer">
     <p class="title">No title found</p>
@@ -31,10 +39,39 @@
       for (let i of data) {
         if (i.file == imageID) {
           document.querySelector(".footer .title").innerHTML = i.name;
+          document.querySelector(".description").innerHTML = i.description;
         }
       }
     })
     .catch((e) => {console.log("Error: " + e);});
+
+    var button = document.querySelector(".info-button");
+    var desc = document.querySelector(".description");
+    var h = desc.clientHeight + 1;
+    var c = document.querySelector(".description-container");
+    desc.style.marginTop = "-" + h + "px";
+
+    button.addEventListener("click", (e) => {
+      c.style.transform = "";
+      if (desc.getAttribute("open") === "true") {
+        desc.style.marginTop = "-" + h + "px";
+        desc.setAttribute("open",  "false");
+      } else {
+        desc.style.marginTop = "0px";
+        desc.setAttribute("open",  "true");
+      };
+    });
+    button.addEventListener("mouseover", () => {if (desc.getAttribute("open") === "false") {c.style.transform = "translateY(10px)";}});
+    button.addEventListener("mouseleave", () => {c.style.transform = "";});
+
+    window.addEventListener("resize", () => {
+      h = desc.clientHeight + 1;
+      if (desc.getAttribute("open") === "false") {
+        desc.style.marginTop = "-" + h + "px";
+      } else {
+        desc.style.marginTop = "0px";
+      }
+    });
   </script>
 </body>
 </html>
