@@ -1,9 +1,17 @@
+var main_nav = document.querySelector("#main-nav");
+var desc_container = document.querySelector("#desc-container");
+var emVal = parseFloat(getComputedStyle(document.body).fontSize);
+var workspaces = document.getElementsByClassName("workspace-tab");
+var list_items = main_nav.getElementsByTagName("li");
+var descriptions = document.getElementsByClassName("desc");
+
+
 fetch("https://am-i.cool/search/data.json", {
   cache: "no-cache"
 })
 .then(response => response.json())
 .then(data => {
-  let main_nav = document.querySelector("#main-nav");
+  
   for (let i of data) {
     let li = document.createElement("li");
     li.onclick = () => {workspaceSelect(event.target)};
@@ -15,16 +23,15 @@ fetch("https://am-i.cool/search/data.json", {
     main_nav.appendChild(li);
   }
   main_nav.firstChild.className = "selected-li";
-  let mb = document.createElement("div");
-  mb.id = "moving-border";
-  main_nav.appendChild(mb);
+  let movBorder = document.createElement("div");
+  movBorder.id = "moving-border";
+  main_nav.appendChild(movBorder);
 
-  let desc_container = document.querySelector("#desc-container");
+
   for (let i of data) {
     let descBox = document.createElement("div");
     let descBoxH3 = document.createElement("h3");
     let descBoxP = document.createElement("p");
-
 
     descBoxH3.className = "title";
     descBoxH3.innerHTML = i.name;
@@ -39,34 +46,24 @@ fetch("https://am-i.cool/search/data.json", {
   }
   
 
-  var border_ = document.getElementById("moving-border");
-  var emVal = parseFloat(getComputedStyle(document.body).fontSize);
-
-  main_nav.addEventListener("mouseover", function( event ) {
+  main_nav.onmouseover = (event) => {
       var e = event.target;
       if (e.tagName == "LI" && e.parentNode.id == "main-nav") {
           var containerRect = main_nav.getBoundingClientRect(),
           elemRect = e.getBoundingClientRect(),
-          x = elemRect.left - containerRect.left - 1,
+          x = elemRect.left - containerRect.left,
           y = elemRect.top - containerRect.top - 1,
           w = elemRect.width,
           h = elemRect.height;
-          border_.style.left = x + "px";
-          border_.style.top = y + "px";
-          border_.style.width = w - (emVal * 2) + "px";
-          border_.style.height = h - (emVal * 2) + "px";
-          border_.style.borderColor = "#777";
+          movBorder.style.left = x + "px";
+          movBorder.style.top = y + "px";
+          movBorder.style.width = w - (emVal * 2) + "px";
+          movBorder.style.height = h - (emVal * 2) + "px";
+          movBorder.style.borderColor = "#777";
       }
-  }, false);
+  };
 
-  function makeTransparent() {
-      border_.style.borderColor = "transparent";
-  }
-
-  main_nav.addEventListener("mouseleave", makeTransparent, false);
-  window.onresize = makeTransparent;
-
-
+  main_nav.onmouseleave = window.onresize = () => {movBorder.style.borderColor = "transparent"};
 
 
   function new_tab(id) {
@@ -80,24 +77,15 @@ fetch("https://am-i.cool/search/data.json", {
   }
 
   function workspaceSelect(e) {
-    var id = e.innerHTML.toLowerCase().replace(" ", "_");               
-    var workspaces = document.getElementsByClassName("workspace-tab");
+    var id = e.innerHTML.toLowerCase().replace(" ", "_");
 
-    for (let workspace of workspaces) {
-        workspace.style.display = "none";
-    }
+    for (let workspace of workspaces) {workspace.style.display = "none";}
+    for (let desc of descriptions) {desc.style.display = "none";}
+    for (let item of list_items) {item.className = "";}
+
     if (id == "about") {workspaces[0].style.display = "block";} else {workspaces[1].style.display = "flex"; new_tab(id);}
-
-    list_items = document.getElementById("main-nav").getElementsByTagName("li");
-    for (let item of list_items) {
-        item.className = "";
-    }
-    e.className = "selected-li";
     
-    var descriptions = document.getElementsByClassName("desc");
-    for (let desc of descriptions) {
-        desc.style.display = "none";
-    }
+    e.className = "selected-li"; 
     document.getElementById(id).style.display = "block";
   }
 })

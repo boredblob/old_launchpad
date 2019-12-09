@@ -34,7 +34,7 @@
 
     function _search() {
       while (Results.firstChild) {
-        Results.removeChild(Results.firstChild);
+        Results.firstChild.remove();
       };
 
       fetch("data.json", {
