@@ -33,147 +33,22 @@
         <form onsubmit="__search(); return false;">
             <input type="text" class="searchbar" placeholder="Search" />
         </form>
-        <script src="/search.js"></script>
+        <script src="../search.js"></script>
     </header>
 
     <main id="main">
         <nav class="main-nav-container">
-            <ul id="main-nav">
-                <li class="selected-li" onclick="workspaceSelect(this);">About</li>
-                <li onclick="workspaceSelect(this);">Neon</li>
-                <li onclick="workspaceSelect(this);">Bird</li>
-                <li onclick="workspaceSelect(this);">Bloopyfloop</li>
-                <li onclick="workspaceSelect(this);">Tree</li>
-                <li onclick="workspaceSelect(this);">Lobalug</li>
-                <li onclick="workspaceSelect(this);">Paper Sky</li>
-                <li onclick="workspaceSelect(this);">Ball</li>
-                <li onclick="workspaceSelect(this);">Untitled</li>
-                <li onclick="workspaceSelect(this);">Eye</li>
-                <li onclick="workspaceSelect(this);">Hair</li>
-                <li onclick="workspaceSelect(this);">Walking</li>
-                <li onclick="workspaceSelect(this);">Night</li>
-                <div id="moving-border"></div>
-            </ul>
+            <ul id="main-nav"></ul>
         </nav>
-        <script>
-            var main_nav = document.getElementById("main-nav");
-            var border_ = document.getElementById("moving-border");
-            var emVal = parseFloat(getComputedStyle(document.body).fontSize);
-
-            main_nav.addEventListener("mouseover", function( event ) {
-                var e = event.target;
-                if (e.tagName == "LI" && e.parentNode.id == "main-nav") {
-                    var containerRect = main_nav.getBoundingClientRect(),
-                    elemRect = e.getBoundingClientRect(),
-                    x = elemRect.left - containerRect.left - 1,
-                    y = elemRect.top - containerRect.top - 1,
-                    w = elemRect.width,
-                    h = elemRect.height;
-                    border_.style.left = x + "px";
-                    border_.style.top = y + "px";
-                    border_.style.width = w - (emVal * 2) + "px";
-                    border_.style.height = h - (emVal * 2) + "px";
-                    border_.style.borderColor = "#777";
-                }
-            }, false);
-
-            function makeTransparent() {
-                border_.style.borderColor = "transparent";
-            }
-
-            main_nav.addEventListener("mouseleave", makeTransparent, false);
-            window.onresize = makeTransparent;
-        </script>
         <section class="workspace-tab" id="about">
             <h3 class="about-title">Welcome to the gallery!</h3>
             <p class="about-paragraph">Here you'll be able to find the full-sized versions of any images I've put up here, as well as a little description thing about them.</p>
         </section>
         <section class="workspace-tab" id="gallery-tab">
             <div id="imgbox"></div>
-            <aside id="desc-container">
-                <div class="desc" id="neon">
-                    <h3 class="title">Neon</h3>
-                    <p class="caption">A quick doodle using a black canvas because the idea felt quite cool, and more neon colours felt fun to just mess about with.</p>
-                </div>
-                <div class="desc" id="bird">
-                    <h3 class="title">Bird</h3>
-                    <p class="caption">If you can't tell, this is supposed to be a bird I guess. This started in a bored doodle of a more cartoonish bird, but I decided to add some colour and kinda just wanted to throw some paint around, which I ended up doing in a more literal sense. I've never done things in this sort of style before and I've got to say, I rather like it.</p>
-                </div>
-                <div class="desc" id="bloopyfloop">
-                    <h3 class="title">Bloopyfloop</h3>
-                    <p class="caption">A quick doodle for CoMC, I did this in the same style as the other CoMC thing, because the style's great for speed. And no, the name is beautiful.</p>
-                </div>
-                <div class="desc" id="tree">
-                    <h3 class="title">Life in a Felled Tree</h3>
-                    <p class="caption">THIS, oh my goodness gracious me, this blooming drawing. It took so much out of me because it took so long to do, plus as time went on, the fear of smudging it went exponentially up, and there are still visible smudge marks on it that I couldn't get rid of. At least it's sort of passable in looks, despite the dodgy scan making the contrast go all funny.</p>
-                </div>
-                <div class="desc" id="lobalug">
-                    <h3 class="title">Lobalug</h3>
-                    <p class="caption">An attempt at a more cartoonish digital painting I made for a CoMC task, but also took as a personal challenge and chance to try out a style that I now love for anything I don't want to spend an age on.</p>
-                </div>
-                <div class="desc" id="paper_sky">
-                    <h3 class="title">Paper Sky</h3>
-                    <p class="caption">Made this for the cover of a spotify playlist, not quite sure why I had the idea honestly, so I suppose it's up to you to interpret it as you wish.</p>
-                </div>
-                <div class="desc" id="ball">
-                    <h3 class="title">Shading Practice</h3>
-                    <p class="caption">After not really doing much arty stuff for a bit, I went back to some exercises, and this is the one I did for shading spheres using multiple colours for the light.</p>
-                </div>
-                <div class="desc" id="untitled">
-                    <h3 class="title">Untitled</h3>
-                    <p class="caption">This attempt at abstract art of sorts came about because I hadn't much inspiration, and just kind of scribbled all over the page in frustration.</p>
-                </div>
-                <div class="desc" id="eye">
-                    <h3 class="title">Eye</h3>
-                    <p class="caption">I originally made this for a spotify playlist cover, but then switched it out for something else when it didn't quite fit.</p>
-                </div>
-                <div class="desc" id="hair">
-                    <h3 class="title">Hair</h3>
-                    <p class="caption">Did this while learning how to draw hair digitally using an online tutorial to get the technique. At first, this was just some hair, but after deciding that the faceless demon I had created was pure nightmare fuel, I quickly whipped up an admitttedly badly shaded face.</p>
-                </div>
-                <div class="desc" id="walking">
-                    <h3 class="title">Walking</h3>
-                    <p class="caption">Done just after the my first digital thing, this is just a digitally coloured version of a pencil sketch I did when bored. I wasn't too great with the hand-eye coordination with the drawing tablet, so instead of practising with drawing exercises I chose to trace an old drawing, since that would be more fun.</p>
-                </div>
-                <div class="desc" id="night">
-                    <h3 class="title">Person at Night</h3>
-                    <p class="caption">This is actually the first thing I did digitally! I copied a different sketch I'd done with pencils, as a reference, and after a stupidly long time, I ended up with this.</p>
-                </div>
-            </aside>
+            <aside id="desc-container"></aside>
         </section>
-        <script>
-            function new_tab(id) {
-                var imgbox = document.getElementById("imgbox");
-                var img = document.createElement("img");
-                
-                for (let item of imgbox.children) {item.remove();}
-                img.src = id + ".png";
-                img.className = "image";
-                imgbox.appendChild(img);
-            }
-
-            function workspaceSelect(e) {
-                var id = e.innerHTML.toLowerCase().split(' ').join('_');                
-                var workspaces = document.getElementsByClassName("workspace-tab");
-
-                for (let workspace of workspaces) {
-                    workspace.style.display = "none";
-                }
-                if (id == "about") {workspaces[0].style.display = "block";} else {workspaces[1].style.display = "flex"; new_tab(id);}
-
-                list_items = document.getElementById("main-nav").getElementsByTagName("li");
-                for (let item of list_items) {
-                    item.className = "";
-                }
-                e.className = "selected-li";
-                
-                var descriptions = document.getElementsByClassName("desc");
-                for (let desc of descriptions) {
-                    desc.style.display = "none";
-                }
-                document.getElementById(id).style.display = "block";
-            }
-        </script>
+        <script src="app.js"></script>
     </main>
 </body>
 </html>
