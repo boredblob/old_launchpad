@@ -18,8 +18,8 @@ The following will be in order, lights getting lighter and darks getting darker.
 #### Backgrounds
 
 * Dark 
-  ![Dark](/swatches/black.png)
-    * **#121012** // #333
+  ![Dark](/swatches/dark.png)
+    * **#121012** // #777 // #333
 * Light 
   ![Light](/swatches/light.png)
     * **#ead1bb** (Light beige)
