@@ -8,19 +8,19 @@ The following will be in order, lights getting lighter and darks getting darker.
 
 #### Text
 
-* Off-white 
+* Off-white <br/>
   ![Off-white](/swatches/off-white.png)
     * **#fffcf5** // #dfdcd7 // #ccc7bf
-* Black 
+* Black <br/>
   ![Black](/swatches/black.png)
     * **#121012** // #333
 
 #### Backgrounds
 
-* Dark 
+* Dark <br/>
   ![Dark](/swatches/dark.png)
     * **#121012** // #777 // #333
-* Light 
+* Light <br/>
   ![Light](/swatches/light.png)
     * **#ead1bb** (Light beige)
     * **#c3f1ee** (Light turqoise)
@@ -28,7 +28,7 @@ The following will be in order, lights getting lighter and darks getting darker.
 
 #### Accents
 
-* Purple 
+* Purple <br/>
   ![Purple](/swatches/purple.png)
     * **#ebb0eb** // #ca87ca // #A570A5
 
