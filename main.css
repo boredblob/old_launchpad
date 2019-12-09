@@ -203,6 +203,7 @@ header form input {
     stroke-linecap: round;
     stroke: none;
     fill: #121012;
+    pointer-events: none;
 }
 
 .icon circle {fill: #c3f1ee;}
@@ -364,7 +365,7 @@ header form input {
     display: flex;
     flex-wrap: wrap;
     padding: 0 0.25em;
-    width: 80%;
+    width: 95%;
 }
 
 .imgcolumn {
@@ -416,10 +417,6 @@ header form input {
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media only screen and (max-width: 800px) {
-    .imgcolumn {
-        flex: 50%;
-        max-width: calc(50% - 0.5em);
-    }
     #main-nav {
         width: 98%;
     }
@@ -430,10 +427,6 @@ header form input {
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
-    .imgcolumn {
-        flex: 100%;
-        max-width: calc(100% - 0.5em);
-    }
     .info {
         font-size: 0.9em;
         width: 100%;

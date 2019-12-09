@@ -6,9 +6,7 @@ var list_items = main_nav.getElementsByTagName("li");
 var descriptions = document.getElementsByClassName("desc");
 
 
-fetch("https://am-i.cool/search/data.json", {
-  cache: "no-cache"
-})
+fetch("https://am-i.cool/search/data.json")
 .then(response => response.json())
 .then(data => {
   
