@@ -30,8 +30,8 @@
   </div>
   <script>
     var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
-    document.querySelector(".image").src = "/gallery/" + imageID + ".png";
-    fetch("/search/data.json")
+    document.querySelector(".image").src = "../gallery/" + imageID + ".png";
+    fetch("https://am-i.cool/search/data.json")
     .then(response => response.json())
     .then(data => {
       for (let i of data) {
@@ -57,8 +57,14 @@
           desc.setAttribute("open",  "true");
         };
       });
-      button.addEventListener("mouseover", () => {if (desc.getAttribute("open") === "false") {c.style.transform = "translateY(10px)";}});
-      button.addEventListener("mouseleave", () => {c.style.transform = "";});
+      button.onmouseover = () => {if (desc.getAttribute("open") === "false") {c.style.transform = "translateY(10px)";}};
+      button.onmouseleave = () => {c.style.transform = "";};
+      window.onclick = (e) => {
+        if (!c.contains(e.target)) {
+          desc.style.marginTop = "-" + h + "px";
+          desc.setAttribute("open",  "false");
+        }
+      };
 
       window.addEventListener("resize", () => {
         h = desc.clientHeight + 1;
