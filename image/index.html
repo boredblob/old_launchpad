@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://am-i.cool/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
   <title>Personal Launchpad</title>
@@ -30,8 +30,8 @@
   </div>
   <script>
     var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
-    document.querySelector(".image").src = "/gallery/" + imageID + ".png";
-    fetch("/search/data.json", {
+    document.querySelector(".image").src = "https://am-i.cool/gallery/" + imageID + ".png";
+    fetch("https://am-i.cool/search/data.json", {
       cache: "no-cache"
      })
     .then(response => response.json())
@@ -42,36 +42,36 @@
           document.querySelector(".description").innerHTML = i.description;
         }
       }
+
+      var button = document.querySelector(".info-button");
+      var desc = document.querySelector(".description");
+      var h = desc.clientHeight + 1;
+      var c = document.querySelector(".description-container");
+      desc.style.marginTop = "-" + h + "px";
+
+      button.addEventListener("click", (e) => {
+        c.style.transform = "";
+        if (desc.getAttribute("open") === "true") {
+          desc.style.marginTop = "-" + h + "px";
+          desc.setAttribute("open",  "false");
+        } else {
+          desc.style.marginTop = "0px";
+          desc.setAttribute("open",  "true");
+        };
+      });
+      button.addEventListener("mouseover", () => {if (desc.getAttribute("open") === "false") {c.style.transform = "translateY(10px)";}});
+      button.addEventListener("mouseleave", () => {c.style.transform = "";});
+
+      window.addEventListener("resize", () => {
+        h = desc.clientHeight + 1;
+        if (desc.getAttribute("open") === "false") {
+          desc.style.marginTop = "-" + h + "px";
+        } else {
+          desc.style.marginTop = "0px";
+        }
+      });
     })
     .catch((e) => {console.log("Error: " + e);});
-
-    var button = document.querySelector(".info-button");
-    var desc = document.querySelector(".description");
-    var h = desc.clientHeight + 1;
-    var c = document.querySelector(".description-container");
-    desc.style.marginTop = "-" + h + "px";
-
-    button.addEventListener("click", (e) => {
-      c.style.transform = "";
-      if (desc.getAttribute("open") === "true") {
-        desc.style.marginTop = "-" + h + "px";
-        desc.setAttribute("open",  "false");
-      } else {
-        desc.style.marginTop = "0px";
-        desc.setAttribute("open",  "true");
-      };
-    });
-    button.addEventListener("mouseover", () => {if (desc.getAttribute("open") === "false") {c.style.transform = "translateY(10px)";}});
-    button.addEventListener("mouseleave", () => {c.style.transform = "";});
-
-    window.addEventListener("resize", () => {
-      h = desc.clientHeight + 1;
-      if (desc.getAttribute("open") === "false") {
-        desc.style.marginTop = "-" + h + "px";
-      } else {
-        desc.style.marginTop = "0px";
-      }
-    });
   </script>
 </body>
 </html>
