@@ -4,6 +4,8 @@ My personal site
 
 ## Colours
 
+![Swatches](/swatches/swatches.png)
+
 The following will be in order, lights getting lighter and darks getting darker.
 
 #### Text
@@ -19,7 +21,7 @@ The following will be in order, lights getting lighter and darks getting darker.
 
 * Dark <br/>
   ![Dark](/swatches/dark.png)
-    * **#121012** // #777 // #333
+    * **#121012** // #333 // #777
 * Light <br/>
   ![Light](/swatches/light.png)
     * **#ead1bb** (Light beige)
