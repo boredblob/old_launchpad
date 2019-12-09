@@ -37,3 +37,5 @@ The following will be in order, lights getting lighter and darks getting darker.
 ## Attributions
 
 * Search tool provided by [Fuse.js](https://fusejs.io/)
+* Icons from [Feather Icons](https://feathericons.com/)
+* Wumpus is property of Discord, Inc. The image is modified from [their branding pack](https://discordapp.com/branding)

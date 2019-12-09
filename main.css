@@ -198,7 +198,13 @@ header form input {
     padding: 0.2em;
     transition: transform 1s ease-in-out;
     transform: rotate(0deg);
+    stroke-linecap: round;
+    stroke: none;
+    fill: #121012;
 }
+
+.icon circle {fill: #c3f1ee;}
+.icon polyline {stroke: #c3f1ee; stroke-width: 1.5;}
 
 .line:hover .icon {
     transform: rotate(360deg);
