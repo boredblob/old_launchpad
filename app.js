@@ -91,7 +91,6 @@ fetch("/search/data.json")
         img.alt = d.name;
         a.href = "/image?i=" + d.file;
         a.appendChild(img);
-        console.log(cols, i%cols, imgcolumns);
         imgcolumns[i % cols].appendChild(a);
       };
 
@@ -100,7 +99,7 @@ fetch("/search/data.json")
         _col.style.maxWidth = "calc(" + (100 / cols) + "% - 0.5em)";
       }
     };
-    window.onresize = calcCols;
+    window.onorientationchange = window.onresize = calcCols;
     calcCols();
   })
   .catch((e) => console.log("Error fetching data\n" + e));
