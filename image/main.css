@@ -91,6 +91,7 @@ body {
   margin-top: -300px;
   font-size: min(max(1.5rem, 16px), 8px);
   transition: margin 0.4s cubic-bezier(0.66, 1.8, 0.55, 1);
+  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .image {

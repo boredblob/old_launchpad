@@ -60,7 +60,7 @@
       button.onmouseover = () => {if (desc.getAttribute("open") === "false") {c.style.transform = "translateY(10px)";}};
       button.onmouseleave = () => {c.style.transform = "";};
       window.onclick = (e) => {
-        if (!c.contains(e.target)) {
+        if (!desc.contains(e.target) && !button.contains(e.target)) {
           desc.style.marginTop = "-" + h + "px";
           desc.setAttribute("open",  "false");
         }
