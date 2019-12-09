@@ -30,8 +30,8 @@
   </div>
   <script>
     var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
-    document.querySelector(".image").src = "../gallery/" + imageID + ".png";
-    fetch("https://am-i.cool/search/data.json")
+    document.querySelector(".image").src = "/gallery/" + imageID + ".png";
+    fetch("/search/data.json")
     .then(response => response.json())
     .then(data => {
       for (let i of data) {
