@@ -187,7 +187,7 @@ header form input {
     position: relative;
     bottom: 50%;
     transform: translateY(50%);
-    border-top: 1px solid #ffcfff;
+    border-top: 1px solid #333;
     color: #121012;
 }
 
@@ -308,7 +308,7 @@ header form input {
 
 .description {
     position: relative;
-    background: #c3f1ee;
+    background: #9bb7d4;
     width: 65%;
     border-radius: 0.5em;
     box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
@@ -478,7 +478,7 @@ header form input {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffcfff;
+  background: #ebb0eb;
 }
 
 ::-webkit-scrollbar-thumb:hover {
