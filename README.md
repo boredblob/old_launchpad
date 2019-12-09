@@ -1,6 +1,10 @@
 # omerismyname.github.io
 My personal site
 
+## Back-end
+
+All pages are static, though javascript is used to dynamically load the pages. This is done by way of fetching data from a json file, containing details of images and their captions and things.
+
 
 ## Colours
 
