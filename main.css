@@ -31,7 +31,7 @@ header {
     height: 14%;
     max-height: 70px;
     min-height: 30px;
-    background: #c3f1ee;
+    background: #ead1bb;
     color: #121012;
     display: flex;
     align-items: center;
@@ -372,7 +372,7 @@ header form input {
     height: auto !important;
     box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
     outline: none;
-    background: #b9a87f;
+    background: #9bb7d4;
 }
 
 @media only screen and (max-width: 1000px) {
