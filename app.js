@@ -70,9 +70,9 @@ function colNum() {
 fetch("/search/data.json")
   .then(response => response.json())
   .then(data => {
+    var row = document.querySelector(".imgrow");
     function calcCols() {
       var cols = colNum();
-      var row = document.querySelector(".imgrow");
 
       while (row.firstChild) {row.firstChild.remove()};
 
@@ -99,7 +99,7 @@ fetch("/search/data.json")
         _col.style.maxWidth = "calc(" + (100 / cols) + "% - 0.5em)";
       }
     };
-    window.onorientationchange = window.onresize = calcCols;
+    window.onorientationchange = row.onresize = calcCols;
     calcCols();
   })
   .catch((e) => console.log("Error fetching data\n" + e));
