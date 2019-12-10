@@ -85,10 +85,12 @@ header ul li {
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
     z-index: 3;
     border-radius: 0 0 0.5em 0.5em;
+    pointer-events: none;
 }
 
 .projects-dropdown a {
     display: block;
+    pointer-events: all;
     font-size: 0.8em;
     padding: 0.5em 0.5em 0.5em 0.5em;
 }
