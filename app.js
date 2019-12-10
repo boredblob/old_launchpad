@@ -70,7 +70,6 @@ function colNum() {
 fetch("/search/data.json")
   .then(response => response.json())
   .then(data => {
-    _data = data;
     function calcCols() {
       var cols = colNum();
       var row = document.querySelector(".imgrow");
@@ -84,12 +83,13 @@ fetch("/search/data.json")
       }
       var imgcolumns = document.querySelectorAll(".imgcolumn");
 
-      for (const [i, d] of _data.entries()) {
+      for (let [i, d] of data.entries()) {
+        d = d.pages[0];
         let img = document.createElement("img");
         let a = document.createElement("a");
         img.src = "/gallery/thumbs/" + d.file + ".png";
         img.alt = d.name;
-        a.href = "/image?i=" + d.file;
+        a.href = "/image/?i=" + d.file;
         a.appendChild(img);
         imgcolumns[i % cols].appendChild(a);
       };

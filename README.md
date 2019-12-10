@@ -1,6 +1,12 @@
 # omerismyname.github.io
 My personal site
 
+## To-do
+
+- [x] Database supports pages rather than single images.
+- [x] Gallery supports multiple images per page.
+- [ ] Add sketchbook drawings to database. (Digitally redo bad apple).
+
 ## Back-end
 
 All pages are static, though javascript is used to dynamically load the pages. This is done by way of fetching data from a json file, containing details of images and their captions and things.

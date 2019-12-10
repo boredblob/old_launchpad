@@ -6,7 +6,7 @@ searchbar.value = search;
 while (results.firstChild) {results.firstChild.remove();};
 
 
-fetch("data.json")
+fetch("/search/data.json")
 .then(response => response.json())
 .then(data => {
   var options = {
@@ -17,9 +17,10 @@ fetch("data.json")
       name: 'tags',
       weight: 0.2
     }, {
-      name: 'description',
+      name: 'pages.description',
       weight: 0.1
-    }]
+    }],
+    threshold: 0.4
   };
   let fuse = new Fuse(data, options);
 
@@ -29,11 +30,11 @@ fetch("data.json")
     
     if (searchResult.length > 0) {
       var i = 1;
-      for (let r of searchResult) {
+      for (const r of searchResult) {
         let result = document.createElement("div");
         let text = document.createElement("a");
         text.className = "dark";
-        text.href = "/image?i=" + r.file;
+        text.href = "/image/?i=" + r.pages[0].file;
         text.innerHTML = r.name;
         result.className = "result";
         result.style.transitionDuration = ((i * 2) / 10) + "s";

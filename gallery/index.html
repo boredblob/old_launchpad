@@ -30,7 +30,7 @@
                 </li>
             </ul>
         </nav>
-        <form onsubmit="__search(); return false;">
+        <form onsubmit="return __search();">
             <input type="text" class="searchbar" placeholder="Search" />
         </form>
         <script src="../search.js"></script>
@@ -44,10 +44,7 @@
             <h3 class="about-title">Welcome to the gallery!</h3>
             <p class="about-paragraph">Here you'll be able to find the full-sized versions of any images I've put up here, as well as a little description thing about them.</p>
         </section>
-        <section class="workspace-tab" id="gallery-tab">
-            <div id="imgbox"></div>
-            <aside id="desc-container"></aside>
-        </section>
+        <section class="workspace-tab" id="gallery-tab"></section>
         <script src="app.js"></script>
     </main>
 </body>

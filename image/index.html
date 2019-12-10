@@ -35,9 +35,9 @@
     .then(response => response.json())
     .then(data => {
       for (let i of data) {
-        if (i.file == imageID) {
+        if (i.pages[0].file == imageID) {
           document.querySelector(".footer .title").innerHTML = i.name;
-          document.querySelector(".description").innerHTML = i.description;
+          document.querySelector(".description").innerHTML = i.pages[0].description;
         }
       }
 
