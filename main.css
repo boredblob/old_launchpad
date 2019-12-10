@@ -103,7 +103,7 @@ header ul li {
 
 header ul li:hover .projects-dropdown {
     height: 6em;
-    pointer-events: all;
+    display: block;
 }
 
 header ul li:hover .projects-dropdown li {
