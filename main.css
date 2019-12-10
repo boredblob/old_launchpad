@@ -85,11 +85,6 @@ header ul li {
     box-shadow: 0 0.8em 1.2em 0 rgba(0,0,0,0.3);
     z-index: 3;
     border-radius: 0 0 0.5em 0.5em;
-    pointer-events: none;
-}
-
-.projects-dropdown li {
-    display: none;
 }
 
 .projects-dropdown a {
@@ -103,11 +98,6 @@ header ul li {
 
 header ul li:hover .projects-dropdown {
     height: 6em;
-    display: block;
-}
-
-header ul li:hover .projects-dropdown li {
-    display: block;
 }
 
 header form {
