@@ -88,6 +88,10 @@ header ul li {
     pointer-events: none;
 }
 
+.projects-dropdown li {
+    display: none;
+}
+
 .projects-dropdown a {
     display: block;
     font-size: 0.8em;
@@ -100,6 +104,10 @@ header ul li {
 header ul li:hover .projects-dropdown {
     height: 6em;
     pointer-events: all;
+}
+
+header ul li:hover .projects-dropdown li {
+    display: block;
 }
 
 header form {
