@@ -29,9 +29,9 @@ for (let li of list_items) {
   li.onclick = workspaceSelect;
 }
 
-main_nav.onmouseleave = window.onresize = () => {
+main_nav.onmouseleave = () => {
   toEle(document.querySelector(".selected-li"));
-};
+}; //set lower down at other onresize
 toEle(document.querySelector(".selected-li"));
 
 for (let chevron of chevrons) {
@@ -63,44 +63,49 @@ function colNum() {
   if (window.outerWidth <= 600) {
     return 1;
   } else {
-    return Math.floor(((window.outerWidth - 600) / 300) + 1);
+    return Math.floor(((window.outerWidth - 600) / 350) + 2);
   }
 }
 
+var oldcols;
 fetch("/search/data.json")
   .then(response => response.json())
   .then(data => {
     var row = document.querySelector(".imgrow");
     function calcCols() {
       var cols = colNum();
+      if (oldcols !== cols) {
+        console.log("reloaded images");
+        while (row.firstChild) {row.firstChild.remove()};
 
-      while (row.firstChild) {row.firstChild.remove()};
+        for (let y = 0; y < cols; y++) {
+          let col = document.createElement("div");
+          col.className = "imgcolumn";
+          row.appendChild(col);
+        }
+        var imgcolumns = document.querySelectorAll(".imgcolumn");
 
-      for (let y = 0; y < cols; y++) {
-        let col = document.createElement("div");
-        col.className = "imgcolumn";
-        row.appendChild(col);
-      }
-      var imgcolumns = document.querySelectorAll(".imgcolumn");
+        for (let [i, d] of data.entries()) {
+          d = d.pages[0];
+          let img = document.createElement("img");
+          let a = document.createElement("a");
+          img.src = "/gallery/thumbs/" + d.file + ".png";
+          img.alt = d.name;
+          a.href = "/image/?i=" + d.file;
+          a.appendChild(img);
+          imgcolumns[i % cols].appendChild(a);
+        };
 
-      for (let [i, d] of data.entries()) {
-        d = d.pages[0];
-        let img = document.createElement("img");
-        let a = document.createElement("a");
-        img.src = "/gallery/thumbs/" + d.file + ".png";
-        img.alt = d.name;
-        a.href = "/image/?i=" + d.file;
-        a.appendChild(img);
-        imgcolumns[i % cols].appendChild(a);
-      };
-
-      for (let _col of imgcolumns) {
-        _col.style.flex = (100 / cols) + "%";
-        _col.style.maxWidth = "calc(" + (100 / cols) + "% - 0.5em)";
+        for (let _col of imgcolumns) {
+          _col.style.flex = (100 / cols) + "%";
+          _col.style.maxWidth = "calc(" + (100 / cols) + "% - 0.5em)";
+        }
+        oldcols = cols;
       }
     };
     var _width = window.innerWidth;
     window.onresize = () => {
+      toEle(document.querySelector(".selected-li"));
       if (window.innerWidth !== _width) {
         calcCols();
         _width = window.width;
