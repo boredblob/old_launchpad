@@ -75,7 +75,6 @@ fetch("/search/data.json")
     function calcCols() {
       var cols = colNum();
       if (oldcols !== cols) {
-        console.log("reloaded images");
         while (row.firstChild) {row.firstChild.remove()};
 
         for (let y = 0; y < cols; y++) {
