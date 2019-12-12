@@ -122,104 +122,11 @@ header form input {
     height: 86%;
     min-height: calc(100% - 70px);
     max-height: calc(100% - 30px);
-    display: flex;
     position: absolute;
 }
 
-.profile {
-    height: 100%;
-    width: 20%;
-    display: inline-block;
-    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
-}
-
-.pfp {
-    margin-top: 2em;
-    max-width: 80%;
-    height: auto;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    box-shadow: inset 0 0 2em rgba(0,0,0,0.3), 0.1em 0.2em 0.5em rgba(0,0,0,0.3);
-}
-
-.profile-text {
-    padding: 1em 0 0 1em;
-}
-
-.name {
-    font-size: 1.7em;
-}
-
-.username {
-    font-size: 0.8em;
-    color: #dfdcd7;
-    font-weight: normal;
-}
-
-.info {
-    padding: 0.5em 0 1em 0;
-    width: 80%;
-}
-
-#line-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.line {
-    margin: 0 0 0.5em 0.5em;
-    background-color: #c3f1ee;
-    border-radius: 5em;
-    box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
-    width: 3em;
-    height: 3em;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: width 1s ease-in-out;
-    z-index: 1;
-}
-
-.label {
-    font-size: 0.9em;
-    white-space: nowrap;
-    height: 1em;
-    display: inline-block;
-    position: relative;
-    bottom: 50%;
-    transform: translateY(50%);
-    border-top: 1px solid #333;
-    color: #121012;
-}
-
-.icon {
-    max-width: 2.5em;
-    max-height: 2.5em;
-    display: inline-block;
-    padding: 0.2em;
-    transition: transform 1s ease-in-out;
-    transform: rotate(0deg);
-    stroke-linecap: round;
-    stroke: none;
-    fill: #121012;
-    pointer-events: none;
-}
-
-.icon circle {fill: #c3f1ee;}
-.icon polyline {stroke: #c3f1ee; stroke-width: 1.5;}
-
-.line:hover .icon {
-    transform: rotate(360deg);
-}
-
-.workspace {
-    width: 80%;
-    display: inline-block;
-}
-
 .main-nav-container {
-    margin: 1em 0 0 4%;
+    margin: 1em 4% 0 4%;
 }
 
 #main-nav {
@@ -261,38 +168,123 @@ header form input {
     }
 }
 
-#about {
-    margin: 4% 0 0 4%;
-    animation: fade-in 0.5s ease-in-out;
-    width: 90%;
+.workspace {
+    width: 92%;
+    margin: 4%;
 }
 
-#artworks {
-    margin-top: 4%;
+.workspace-tab {
     display: none;
-    width: 100%;
     animation: fade-in 0.5s ease-in-out;
 }
 
-#snippets {
-    margin-top: 4%;
-    display: none;
-    animation: fade-in 0.5s ease-in-out;
-    width: 100%;
-}
+#about {display: block;}
 
 .about-title {
     font-weight: 600;
     font-size: 1.2em;
     white-space: nowrap;
     padding-left: 0.3em;
-    width: 100%;
 }
 
 .about-paragraph {
-    margin: 0.5em 0 0 0.5em;
-    width: 60%;
+    margin: 0.5em 0 0.5em 0.5em;
+    width: 40%;
     font-size: 0.9em;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.profile-flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.pfp-box {
+    width: 20%;
+    min-width: 300px;
+}
+
+.pfp {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2em rgba(0,0,0,0.3), 0.1em 0.2em 0.5em rgba(0,0,0,0.3);
+}
+
+.profile-box {
+    width: 20%;
+    padding-left: 1em;
+    border-left: solid 1px white;
+    margin-left: 3em;
+}
+
+.name {
+    font-size: 1.7em;
+}
+
+.username {
+    font-size: 0.8em;
+    color: #dfdcd7;
+    font-weight: normal;
+}
+
+.info {
+    padding: 0.5em 0 1em 0;
+}
+
+#line-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.line {
+    margin: 0 0 0.5em 0;
+    background-color: #c3f1ee;
+    border-radius: 5em;
+    box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.3);
+    width: 3em;
+    height: 3em;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 1s ease-in-out;
+    z-index: 1;
+}
+
+.label {
+    font-size: 0.9em;
+    white-space: nowrap;
+    height: 1em;
+    display: inline-block;
+    position: relative;
+    bottom: 50%;
+    transform: translateY(50%);
+    border-top: 1px solid #333;
+    color: #121012;
+}
+
+.icon {
+    max-width: 2.5em;
+    max-height: 2.5em;
+    display: inline-block;
+    padding: 0.2em;
+    transition: transform 1s ease-in-out;
+    transform: rotate(0deg);
+    stroke-linecap: round;
+    stroke: none;
+    fill: #121012;
+    pointer-events: none;
+}
+
+.icon circle {fill: #c3f1ee;}
+.icon polyline {stroke: #c3f1ee; stroke-width: 1.5;}
+
+.line:hover .icon {
+    transform: rotate(360deg);
 }
 
 #snippets-container {
@@ -352,7 +344,7 @@ header form input {
 
 #source-code > div {
     display: none;
-    width: 90%;
+    width: 100%;
     animation: fade-in 0.5s ease-in-out;
     filter: brightness(2.5) saturate(0.6);
 }
@@ -364,8 +356,7 @@ header form input {
 .imgrow {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 0.25em;
-    width: 95%;
+    width: 100%;
 }
 
 .imgcolumn {
@@ -384,17 +375,18 @@ header form input {
     background: #9bb7d4;
 }
 
+@media only screen and (max-width: 1500px) {
+    #descriptions {
+        width: 40%;
+        flex: 40%;
+    }
+    #source-code {
+        flex: 60%;
+        width: 60%;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
-    .profile {
-        width: 30%;
-        background: right / 1px 100% linear-gradient(to bottom, #a570a5 60%, #121012) no-repeat;
-    }
-    .workspace {
-        width: 70%;
-    }
-    .imgrow {
-        width: 98%;
-    }
     #descriptions {
         flex: 50%;
         width: 50%;
@@ -407,29 +399,37 @@ header form input {
         width: 90%;
         margin-left: 1em;
     }
-}
-
-@media only screen and (max-width: 1500px) {
-    .twitter, .location, .email, .discord {
-        display: none;
+    .about-paragraph {
+        width: 50%;
     }
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     #main-nav {
-        width: 98%;
+        width: 100%;
+        justify-content: center;
     }
     #main-nav li {
         padding: 0 0.5em 1em 0.5em;
     }
+    .profile-flex {
+        justify-content: center;
+    }
+    .profile-box {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .about-paragraph {
+        width: 70%;
+    }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
     .info {
         font-size: 0.9em;
-        width: 100%;
     }
     .about-paragraph {
         width: 100%;
@@ -441,15 +441,6 @@ header form input {
     #source-code {
         flex: 100%;
         width: 100%;
-    }
-    .icon {
-        max-width: 1.5em;
-        max-height: 1.5em;
-    }
-    .line {
-        width: 2em;
-        height: 2em;
-        margin-left: 0;
     }
     header input {
         width: 90%;

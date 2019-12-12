@@ -36,56 +36,61 @@
         <script src="/search.js"></script>
     </header>
     <main class="main">
-        <aside class="profile">
-            <img class="pfp" src="/pfp.png"/>
-            <div class="profile-text">
-                <h3 class="name">Omer</h3>
-                <h4 class="username">omerismyname</h4>
-                <p class="info">It's me, hello</p>
-                <div id="line-container">
-                    <div class="line">
-                        <svg viewBox="0 0 24 24" class="icon">
-                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                        </svg>
-                        <p class="label"><a class="dark" href="https://twitter.com/omerismyname">@omerismyname</a></p>
-                    </div>
-                    <div class="line">
-                        <svg viewBox="0 0 24 24" class="icon">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <p class="label"><a class="dark" href="https://goo.gl/maps/ZLS8mSxb87Hdb5wd8">Somewhere, 7 miles from Nowhere</a></p>
-                    </div>
-                    <div class="line">
-                        <svg viewBox="0 0 24 24" class="icon">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <p class="label"><a class="dark" href="mailto:ismynameomer@gmail.com">ismynameomer@gmail.com</a></p>
-                    </div>
-                    <div class="line">
-                        <svg viewBox="0 0 24 24" class="icon">
-                            <path d="M19.5,6.6c-2.5-1.8-4.8-1.8-4.8-1.8l-0.2,0.3c2.9,0.9,4.3,2.2,4.3,2.2c-1.8-1-3.5-1.5-5.2-1.6c-1.2-0.1-2.4-0.1-3.5,0  c-0.1,0-0.2,0-0.3,0C9.2,5.7,7.8,6,6,6.8c-0.6,0.3-1,0.5-1,0.5S6.4,5.9,9.4,5L9.3,4.8c0,0-2.3-0.1-4.8,1.8c0,0-2.5,4.5-2.5,10  c0,0,1.4,2.5,5.2,2.6c0,0,0.6-0.8,1.1-1.4c-2.2-0.7-3-2-3-2s0.2,0.1,0.5,0.3c0,0,0,0,0.1,0.1c0.1,0,0.1,0.1,0.2,0.1  c0.4,0.2,0.9,0.4,1.2,0.6C8,17,8.9,17.3,9.8,17.5c1.3,0.2,2.8,0.3,4.4,0c0.8-0.1,1.6-0.4,2.5-0.7c0.6-0.2,1.3-0.5,2-1  c0,0-0.9,1.4-3.1,2l1.1,1.4c3.8-0.1,5.2-2.6,5.2-2.6C22,11.1,19.5,6.6,19.5,6.6z M8.8,15c-1,0-1.7-0.9-1.7-1.9c0-1,0.8-1.9,1.7-1.9  c1,0,1.8,0.9,1.7,1.9C10.5,14.1,9.8,15,8.8,15z M15,15c-1,0-1.7-0.9-1.7-1.9c0-1,0.8-1.9,1.7-1.9c1,0,1.7,0.9,1.7,1.9  C16.8,14.1,16,15,15,15z"/>
-                        </svg>
-                        <p class="label">Omer#7291</p>
-                    </div>
-                </div>
-            </div>
-        </aside>
+        <nav class="main-nav-container">
+            <ul id="main-nav">
+                <li menuID="about" class="selected-li">About</li>
+                <li menuID="profile">Profile</li>
+                <li menuID="snippets">Code Snippets</li>
+                <li menuID="artworks">"Art"</li>
+                <div id="underline"></div>
+            </ul>
+        </nav>
         <section class="workspace">
-            <nav class="main-nav-container">
-                <ul id="main-nav">
-                    <li menuID="about" class="selected-li">About</li>
-                    <li menuID="snippets">Code Snippets</li>
-                    <li menuID="artworks">"Art"</li>
-                    <div id="underline"></div>
-                </ul>
-            </nav>
             <section class="workspace-tab" id="about">
                 <h3 class="about-title">Why this site exists, I guess...</h3>
                 <p class="about-paragraph">I made this little corner of the web as a sort of personal launchpad to house any little projects of mine.
                 There are interactive versions of things I've coded, and drawings/paintings that I've done.
                 If you're looking for anything good, then this certainly isn't the place to look for it, apologies, but feel free to take a look around.</p>
+            </section>
+            <section class="workspace-tab" id="profile">
+                <div class="profile-flex">
+                    <div class="pfp-box">
+                        <img class="pfp" src="/pfp.png"/>
+                    </div>
+                    <div class="profile-box">
+                        <h3 class="name">Omer</h3>
+                        <h4 class="username">omerismyname</h4>
+                        <p class="info">It's me, hello</p>
+                        <div id="line-container">
+                            <div class="line">
+                                <svg viewBox="0 0 24 24" class="icon">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                </svg>
+                                <p class="label"><a class="dark" href="https://twitter.com/omerismyname">@omerismyname</a></p>
+                            </div>
+                            <div class="line">
+                                <svg viewBox="0 0 24 24" class="icon">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <p class="label"><a class="dark" href="https://goo.gl/maps/ZLS8mSxb87Hdb5wd8">Somewhere, 7 miles from Nowhere</a></p>
+                            </div>
+                            <div class="line">
+                                <svg viewBox="0 0 24 24" class="icon">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <p class="label"><a class="dark" href="mailto:ismynameomer@gmail.com">ismynameomer@gmail.com</a></p>
+                            </div>
+                            <div class="line">
+                                <svg viewBox="0 0 24 24" class="icon">
+                                    <path d="M19.5,6.6c-2.5-1.8-4.8-1.8-4.8-1.8l-0.2,0.3c2.9,0.9,4.3,2.2,4.3,2.2c-1.8-1-3.5-1.5-5.2-1.6c-1.2-0.1-2.4-0.1-3.5,0  c-0.1,0-0.2,0-0.3,0C9.2,5.7,7.8,6,6,6.8c-0.6,0.3-1,0.5-1,0.5S6.4,5.9,9.4,5L9.3,4.8c0,0-2.3-0.1-4.8,1.8c0,0-2.5,4.5-2.5,10  c0,0,1.4,2.5,5.2,2.6c0,0,0.6-0.8,1.1-1.4c-2.2-0.7-3-2-3-2s0.2,0.1,0.5,0.3c0,0,0,0,0.1,0.1c0.1,0,0.1,0.1,0.2,0.1  c0.4,0.2,0.9,0.4,1.2,0.6C8,17,8.9,17.3,9.8,17.5c1.3,0.2,2.8,0.3,4.4,0c0.8-0.1,1.6-0.4,2.5-0.7c0.6-0.2,1.3-0.5,2-1  c0,0-0.9,1.4-3.1,2l1.1,1.4c3.8-0.1,5.2-2.6,5.2-2.6C22,11.1,19.5,6.6,19.5,6.6z M8.8,15c-1,0-1.7-0.9-1.7-1.9c0-1,0.8-1.9,1.7-1.9  c1,0,1.8,0.9,1.7,1.9C10.5,14.1,9.8,15,8.8,15z M15,15c-1,0-1.7-0.9-1.7-1.9c0-1,0.8-1.9,1.7-1.9c1,0,1.7,0.9,1.7,1.9  C16.8,14.1,16,15,15,15z"/>
+                                </svg>
+                                <p class="label">Omer#7291</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="workspace-tab" id="snippets">
                 <div id="snippets-container">
