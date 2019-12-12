@@ -99,7 +99,13 @@ fetch("/search/data.json")
         _col.style.maxWidth = "calc(" + (100 / cols) + "% - 0.5em)";
       }
     };
-    window.onorientationchange = row.onresize = calcCols;
+    var _width = window.innerWidth;
+    window.onresize = () => {
+      if (window.innerWidth !== _width) {
+        calcCols();
+        _width = window.width;
+      }
+    }
     calcCols();
   })
   .catch((e) => console.log("Error fetching data\n" + e));
