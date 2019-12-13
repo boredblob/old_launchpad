@@ -30,7 +30,7 @@ body {
   max-width: 70px;
   border-radius: 0 0 50% 0;
   padding: 0 0.2em 0.2em 0;
-  background: #ead1bb;
+  background: #be9b7b;
   position: absolute;
   z-index: 1;
 }
@@ -60,7 +60,7 @@ body {
   min-height: 10px;
   border-radius: 0 0rem 1rem 1rem;
   padding: 0.5rem;
-  background: #ead1bb;
+  background: #be9b7b;
   outline: none;
   z-index: 2;
 }

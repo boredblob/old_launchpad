@@ -30,7 +30,7 @@ body {
   max-width: 70px;
   border-radius: 0 0 50% 0;
   padding: 0 0.2em 0.2em 0;
-  background: #ead1bb;
+  background: #be9b7b;
 }
 
 .page-logo svg {
@@ -83,7 +83,7 @@ main .results > p {
 }
 
 main .results .result:nth-of-type(2n) {
-  background: #ead1bb;
+  background: #be9b7b;
 }
 
 main .results .result:nth-of-type(2n + 1) {

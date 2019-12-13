@@ -34,9 +34,10 @@ The following will be in order, lights getting lighter and darks getting darker.
     * **#121012** // #333 // #777
 * Light <br/>
   ![Light](/swatches/light.png)
-    * **#ead1bb** (Light beige)
+    * **#be9b7b** (Cappuccino)
     * **#c3f1ee** (Light turqoise)
     * **#9bb7d4** (Pastelly blue)
+    * _#ead1bb (Light beige)_
 
 #### Accents
 
