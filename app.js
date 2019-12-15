@@ -5,23 +5,34 @@ var workspaces = document.querySelectorAll(".workspace-tab");
 var list_items  = document.querySelectorAll("#main-nav li");
 var chevrons = document.querySelectorAll(".show-code");
 var _data;
+const w = document.querySelector(".workspace");
+var pageID = 0;
 
 for (let x of document.querySelectorAll("div.line")) {
-    x.onmouseover = (e) => {if (e.target.className === "line") {e.target.style.width = e.target.children[1].offsetWidth + (emVal * 4) + "px"}};
-    x.onmouseleave = (e) => {if (e.target.className === "line") {e.target.style.width = ""}};
+  x.onmouseover = (e) => {requestAnimationFrame(() => {
+    if (e.target.className === "line") {
+      e.target.style.width = e.target.children[1].offsetWidth + (emVal * 4) + "px";
+    }
+  })};
+  x.onmouseleave = (e) => {requestAnimationFrame(() => {
+    if (e.target.className === "line") {
+      e.target.style.width = "";
+    }
+  })};
 }
 
-function toEle(e) {
-  let containerRect = main_nav.getBoundingClientRect(),
-  elemRect = e.getBoundingClientRect(),
-  x = elemRect.left - containerRect.left - 1,
-  y = elemRect.top - containerRect.top - 1,
-  w = elemRect.width,
-  h = elemRect.height;
-  underline.style.left = x + "px";
-  underline.style.top = y + "px";
-  underline.style.width = w - (emVal * 2) + 4 + "px";
-  underline.style.height = h - (emVal * 2) + 4 + "px";
+function toEle(e) {requestAnimationFrame(() => {
+    let containerRect = main_nav.getBoundingClientRect(),
+    elemRect = e.getBoundingClientRect(),
+    x = elemRect.left - containerRect.left - 1,
+    y = elemRect.top - containerRect.top - 1,
+    w = elemRect.width,
+    h = elemRect.height;
+    underline.style.left = x + "px";
+    underline.style.top = y + "px";
+    underline.style.width = w - (emVal * 2) + 4 + "px";
+    underline.style.height = h - (emVal * 2) + 4 + "px";
+  })
 }
 
 for (let li of list_items) {
@@ -35,7 +46,7 @@ main_nav.onmouseleave = () => {
 toEle(document.querySelector(".selected-li"));
 
 for (let chevron of chevrons) {
-  chevron.onclick = (e) => {
+  chevron.onclick = (e) => {requestAnimationFrame(() => {
     if (e.target.style.transform === "") {
       for (let x of chevrons) {x.style.transform = "";}
       e.target.style.transform = "rotate(180deg)";
@@ -48,12 +59,15 @@ for (let chevron of chevrons) {
       document.getElementById(e.target.getAttribute("code")).style.display = "none";
     }
   }
-};
+)}};
 
 function workspaceSelect(e) {
-  for (let workspace of workspaces) {workspace.style.display = "none";}
-
-  document.getElementById(e.target.getAttribute("menuID")).style.display = "block";
+  let i = 0;
+  let elem = e.target;
+  while((elem=elem.previousSibling)!=null) {i++};
+  i = Math.floor(i / 2);
+  w.style.transform = "translateX(" + -i + "00vw)";
+  pageID = i;
 
   for (let li of list_items) {li.className = ""};
   e.target.className = "selected-li";
@@ -73,34 +87,36 @@ fetch("/search/data.json")
   .then(data => {
     var row = document.querySelector(".imgrow");
     function calcCols() {
-      var cols = colNum();
-      if (oldcols !== cols) {
-        while (row.firstChild) {row.firstChild.remove()};
-
-        for (let y = 0; y < cols; y++) {
-          let col = document.createElement("div");
-          col.className = "imgcolumn";
-          row.appendChild(col);
+      requestAnimationFrame(() => {
+        var cols = colNum();
+        if (oldcols !== cols) {
+          while (row.firstChild) {row.firstChild.remove()};
+  
+          for (let y = 0; y < cols; y++) {
+            let col = document.createElement("div");
+            col.className = "imgcolumn";
+            row.appendChild(col);
+          }
+          var imgcolumns = document.querySelectorAll(".imgcolumn");
+  
+          for (let [i, d] of data.entries()) {
+            d = d.pages[0];
+            let img = document.createElement("img");
+            let a = document.createElement("a");
+            img.src = "/gallery/thumbs/" + d.file + ".png";
+            img.alt = d.name;
+            a.href = "/image/?i=" + d.file;
+            a.appendChild(img);
+            imgcolumns[i % cols].appendChild(a);
+          };
+  
+          for (let _col of imgcolumns) {
+            _col.style.flex = (100 / cols) + "%";
+            _col.style.maxWidth = "calc(" + (100 / cols) + "% - 0.5em)";
+          }
+          oldcols = cols;
         }
-        var imgcolumns = document.querySelectorAll(".imgcolumn");
-
-        for (let [i, d] of data.entries()) {
-          d = d.pages[0];
-          let img = document.createElement("img");
-          let a = document.createElement("a");
-          img.src = "/gallery/thumbs/" + d.file + ".png";
-          img.alt = d.name;
-          a.href = "/image/?i=" + d.file;
-          a.appendChild(img);
-          imgcolumns[i % cols].appendChild(a);
-        };
-
-        for (let _col of imgcolumns) {
-          _col.style.flex = (100 / cols) + "%";
-          _col.style.maxWidth = "calc(" + (100 / cols) + "% - 0.5em)";
-        }
-        oldcols = cols;
-      }
+      })
     };
     var _width = window.innerWidth;
     window.onresize = () => {
@@ -113,3 +129,82 @@ fetch("/search/data.json")
     calcCols();
   })
   .catch((e) => console.log("Error fetching data\n" + e));
+
+
+var pointerX = 0;
+var initialTouchPosX = 0, currentPosX = 0;
+var events = new Object;
+
+function getGesturePointFromEvent(evt) {
+  var x = 0;
+  if(evt.targetTouches) {
+    x = evt.targetTouches[0].clientX;
+  } else {
+    x = evt.clientX;
+  }
+  return x;
+}
+
+function onAnimFrame() {
+  var newXTransform = (currentPosX - initialTouchPosX);
+  var transformStyle = 'translateX(' + (newXTransform - (pageID * window.innerWidth)) + 'px)';
+  w.style.transform = transformStyle;
+}
+
+function handleGestureMove(e) {
+  e.preventDefault();
+  currentPosX = getGesturePointFromEvent(e);
+  requestAnimationFrame(onAnimFrame);
+}
+
+function handleGestureEnd(e) {
+  e.preventDefault();
+  w.style.transition = "all 0.3s ease-out";
+
+  requestAnimationFrame(() => {
+    if (Math.abs(currentPosX - initialTouchPosX) > window.innerWidth / 3) {
+      if (currentPosX - initialTouchPosX < 0) {
+        if (pageID < 3) {
+          pageID++;
+        }
+      } else {
+        if (pageID > 0) {
+          pageID--;
+        }
+      }
+    }
+    w.style.transform = 'translateX(' + -(pageID * window.innerWidth) + 'px)';
+    for (let li of list_items) {li.className = ""};
+    list_items[pageID].className = "selected-li";
+    toEle(document.querySelector(".selected-li"));
+  });
+
+  document.removeEventListener(events.move, handleGestureMove, true);
+  document.removeEventListener(events.end, handleGestureEnd, true);
+  document.removeEventListener(events.cancel, handleGestureEnd, true);
+}
+
+function handleGestureStart(e) {
+  var text = [].reduce.call(e.target.childNodes, (a, b) => {return a + (b.nodeType === 3 ? b.textContent : '');}, '').trim();
+  if (text === "") {
+    e.preventDefault();
+    w.style.transition = "initial";
+    currentPosX = initialTouchPosX = getGesturePointFromEvent(e);
+    document.addEventListener(events.move, handleGestureMove, true);
+    document.addEventListener(events.end, handleGestureEnd, true);
+    document.addEventListener(events.cancel, handleGestureEnd, true);
+  }
+}
+
+if (window.PointerEvent) {
+  w.addEventListener('pointerdown', this.handleGestureStart, true);
+  events.move = "pointermove";
+  events.end = "pointerup";
+  events.cancel = "pointercancel";
+} else {
+  w.addEventListener('touchstart', this.handleGestureStart, true);
+  events.move = "touchmove";
+  events.end = "touchend";
+  events.cancel = "touchcancel";
+  w.addEventListener('mousedown', this.handleGestureStart, true);
+}
