@@ -4,47 +4,6 @@
     border: none;
 }
 
-:root {
-    --background: #121012;
-    --light-text: #fffcf5;
-    --light-text-hover: #dfdcd7;
-    --dark-text-hover: #555;
-    --head-text-hover: #c3f1ee;
-    --medium-background: #333;
-    --lightest-background: #c3f1ee;
-    --light-background: #9bb7d4;
-    --desc-text: #333;
-    --light-accent: #ffcfff;
-    --grey-lines: #ccc7bf;
-    --code-filter: brightness(2.5) saturate(0.6);
-    --code-background: black;
-    --code-border: 1px;
-    --code-color: #a0814f;
-    --scrollbar: #ebb0eb;
-    --scrollbar-hover: #ca87ca;
-}
-
-@media (prefers-color-scheme: light) {    
-    :root {
-        --background: #fffcf5;
-        --light-text: #121012;
-        --light-text-hover: #777;
-        --dark-text-hover: #c3f1ee;
-        --medium-background: #ead1bb;
-        --lightest-background: #be9b7b;
-        --light-background: #7b9bbe;
-        --desc-text: #fffcf5;
-        --light-accent: #ca87ca;
-        --grey-lines: #ccc7bf;
-        --code-filter: none;
-        --code-background: #ccbfb3;
-        --code-border: initial;
-        --code-color: initial;
-        --scrollbar: #ca87ca;
-        --scrollbar-hover: #a570a5;
-    }
-}
-
 a {text-decoration: none; color: inherit;}
 a:hover, a:focus, a:active {color: #dfdcd7; color: var(--light-text-hover);}
 a.dark:hover, a.dark:focus, a.dark:active {color: #555; color: var(--dark-text-hover);}
@@ -535,6 +494,19 @@ header form input {
     header input {
         width: 90%;
     }
+    .workspace-container {
+        overflow: initial;
+        overflow-x: hidden;
+        height: auto;
+    }
+    .workspace-tab {
+        overflow: initial;
+        height: auto;
+        padding-bottom: 4%;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 450px) {
@@ -566,4 +538,45 @@ header form input {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ca87ca; background: var(--scrollbar-hover);
+}
+
+:root {
+    --background: #121012;
+    --light-text: #fffcf5;
+    --light-text-hover: #dfdcd7;
+    --dark-text-hover: #555;
+    --head-text-hover: #c3f1ee;
+    --medium-background: #333;
+    --lightest-background: #c3f1ee;
+    --light-background: #9bb7d4;
+    --desc-text: #333;
+    --light-accent: #ffcfff;
+    --grey-lines: #ccc7bf;
+    --code-filter: brightness(2.5) saturate(0.6);
+    --code-background: black;
+    --code-border: 1px;
+    --code-color: #a0814f;
+    --scrollbar: #ebb0eb;
+    --scrollbar-hover: #ca87ca;
+}
+
+@media (prefers-color-scheme: light) {    
+    :root {
+        --background: #fffcf5;
+        --light-text: #121012;
+        --light-text-hover: #777;
+        --dark-text-hover: #c3f1ee;
+        --medium-background: #ead1bb;
+        --lightest-background: #be9b7b;
+        --light-background: #7b9bbe;
+        --desc-text: #fffcf5;
+        --light-accent: #ca87ca;
+        --grey-lines: #ccc7bf;
+        --code-filter: none;
+        --code-background: #ccbfb3;
+        --code-border: initial;
+        --code-color: initial;
+        --scrollbar: #ca87ca;
+        --scrollbar-hover: #a570a5;
+    }
 }

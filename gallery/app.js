@@ -86,6 +86,10 @@ function handleGestureEnd(e) {
 
   requestAnimationFrame(() => {
     if (Math.abs(currentPosX - initialTouchPosX) > window.innerWidth / 3) {
+      window.scrollBy({
+        top: -window.scrollY,
+        behavior: 'smooth'
+      });
       if (currentPosX - initialTouchPosX < 0) {
         if (pageID < pages_num) {
           pageID++;

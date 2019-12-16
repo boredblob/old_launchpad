@@ -6,8 +6,8 @@
 }
 
 a {text-decoration: none; color: inherit;}
-a:hover {color: #dfdcd7;}
-a.dark:hover {color: #c3f1ee;}
+a:hover, a:focus, a:active {color: #dfdcd7; color: var(--light-text-hover);}
+a.dark:hover, a.dark:focus, a.dark:active {color: #c3f1ee; color: var(--dark-text-hover);}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -24,7 +24,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.2em;
     background: #121012;
+    background: var(--background);
     color: #fffcf5;
+    color: var(--light-text);
 }
 
 header {
@@ -42,6 +44,8 @@ header {
     z-index: 2;
     box-shadow: 0px 1rem 0.7rem -1rem rgba(0,0,0,0.5);
 }
+
+header a.dark:hover, header a.dark:focus, header a.dark:active {color: #c3f1ee;}
 
 .page-logo {
     height: 90%;
@@ -79,7 +83,9 @@ header ul li {
     transition: height 0.5s ease-in-out;
     position: absolute;
     background-color: #333;
+    background-color: var(--medium-background);
     color: #fffcf5;
+    color: var(--light-text);
     min-width: 3em;
     box-shadow: 0 0.8rem 1.2rem 0 rgba(0,0,0,0.3);
     z-index: 3;
@@ -93,9 +99,9 @@ header ul li {
 }
 
 .projects::after { content:"﹀"; padding: 0.5rem 0 0 0.5em;}
-.projects-dropdown a:hover {color: #dfdcd7;}
+.projects-dropdown a:hover, .projects-dropdown a:focus, .projects-dropdown a:active {color: #dfdcd7; color: var(--light-text-hover);}
 
-header ul li:hover .projects-dropdown {
+header ul li:hover .projects-dropdown, header ul li:focus .projects-dropdown, header ul li:active .projects-dropdown {
     height: 6em;
 }
 
@@ -110,9 +116,11 @@ header form input {
     padding: 0.5em;
     font-size: 1em;
     background: #333;
+    background: var(--medium-background);
     border: none;
     border-radius: 0.25em;
     color: #dfdcd7;
+    color: var(--light-text);
     outline: none;
 }
 
@@ -147,6 +155,7 @@ header form input {
     width: 1em;
     height: 1em;
     background: #c3f1ee;
+    background: var(--handle);
     border-radius: 50%;
     position: relative;
     transform: translateX(-50%);
@@ -229,6 +238,7 @@ header form input {
 .image {
     display: inline-block;
     background: #9bb7d4;
+    background: var(--light-background);
     width: auto;
     height: auto;
     max-width: 60%;
@@ -244,6 +254,7 @@ header form input {
     flex-grow: 0;
     padding-bottom: 1em;
     border-bottom: 1px solid #c3f1ee;
+    border-color: var(--underline);
     margin: 3rem;
     box-shadow: 0px 0.5rem 0.2rem -0.5rem rgba(0,0,0,0.5);
 }
@@ -281,6 +292,9 @@ header form input {
     #main-nav {
         width: 100%;
     }
+    .about-paragraph {
+        width: 60%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -289,6 +303,19 @@ header form input {
     }
     .about-paragraph {
         width: 100%;
+    }
+    .workspace-container {
+        overflow: initial;
+        overflow-x: hidden;
+        height: auto;
+    }
+    .workspace-tab {
+        overflow: initial;
+        height: auto;
+        padding-bottom: 4%;
+    }
+    ::-webkit-scrollbar {
+        display: none;
     }
 }
 
@@ -302,7 +329,7 @@ header form input {
 }
 
 ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
-  background: #121012;
+  background: #121012; background: var(--background);
 }
 
 ::-webkit-scrollbar-track:horizontal {
@@ -310,9 +337,37 @@ header form input {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ebb0eb;
+  background: #ebb0eb; background: var(--scrollbar);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ca87ca; 
+  background: #ca87ca; background: var(--scrollbar-hover);
+}
+
+:root {
+    --background: #121012;
+    --light-text: #fffcf5;
+    --light-text-hover: #dfdcd7;
+    --dark-text-hover: #555;
+    --medium-background: #333;
+    --light-background: #9bb7d4;
+    --handle: #c3f1ee;
+    --underline: #c3f1ee;
+    --scrollbar: #ebb0eb;
+    --scrollbar-hover: #ca87ca;
+}
+
+@media (prefers-color-scheme: light) {    
+    :root {
+        --background: #fffcf5;
+        --light-text: #121012;
+        --light-text-hover: #777;
+        --dark-text-hover: #c3f1ee;
+        --medium-background: #ead1bb;
+        --light-background: #7b9bbe;
+        --handle: #a570a5;
+        --underline: #9bb7d4;
+        --scrollbar: #ca87ca;
+        --scrollbar-hover: #a570a5;
+    }
 }
