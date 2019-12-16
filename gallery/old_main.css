@@ -1,0 +1,36 @@
+.main-nav-container {
+  margin: 1rem 0 0 4%;
+}
+
+#main-nav {
+  font-size: 0.9em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80%;
+  border-top: 1px solid #ccc7bf;
+  border-bottom: 1px solid #ccc7bf;
+  position: relative;
+}
+
+#main-nav li {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
+  padding: 1em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  z-index: 1;
+}
+
+#moving-border {
+  border: 2px solid transparent;
+  position: absolute;
+  padding: 1em;
+  pointer-events: none;
+  transition: all 0.2s ease-in;
+}
+
+#main-nav li.selected-li {
+  border-color: #ebb0eb;
+}

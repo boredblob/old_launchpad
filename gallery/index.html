@@ -37,14 +37,19 @@
     </header>
 
     <main id="main">
-        <nav class="main-nav-container">
-            <ul id="main-nav"></ul>
-        </nav>
-        <section class="workspace-tab" id="about">
-            <h3 class="about-title">Welcome to the gallery!</h3>
-            <p class="about-paragraph">Here you'll be able to find the full-sized versions of any images I've put up here, as well as a little description thing about them.</p>
-        </section>
-        <section class="workspace-tab" id="gallery-tab"></section>
+        <div class="workspace-scroll">
+            <div class="bar">
+                <div class="handle"></div>
+            </div>
+        </div>
+        <div class="workspace-container">
+            <div class="workspace">
+                <section class="workspace-tab">
+                    <h3 class="about-title">Welcome to the gallery!</h3>
+                    <p class="about-paragraph">Here you'll be able to find the full-sized versions of any images I've put up here, as well as a little description thing about them.</p>
+                </section>
+            </div>
+        </div>
         <script src="app.js"></script>
     </main>
 </body>

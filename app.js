@@ -1,7 +1,6 @@
 var emVal = parseFloat(getComputedStyle(document.body).fontSize);
 var main_nav = document.getElementById("main-nav");
 var underline = document.getElementById("underline");
-var workspaces = document.querySelectorAll(".workspace-tab");
 var list_items  = document.querySelectorAll("#main-nav li");
 var chevrons = document.querySelectorAll(".show-code");
 var _data;
@@ -131,7 +130,6 @@ fetch("/search/data.json")
   .catch((e) => console.log("Error fetching data\n" + e));
 
 
-var pointerX = 0;
 var initialTouchPosX = 0, currentPosX = 0;
 var events = new Object;
 
