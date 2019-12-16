@@ -9,6 +9,7 @@
     --light-text: #fffcf5;
     --light-text-hover: #dfdcd7;
     --dark-text-hover: #555;
+    --head-text-hover: #c3f1ee;
     --medium-background: #333;
     --lightest-background: #c3f1ee;
     --light-background: #9bb7d4;
@@ -46,7 +47,7 @@
 
 a {text-decoration: none; color: inherit;}
 a:hover, a:focus, a:active {color: #dfdcd7; color: var(--light-text-hover);}
-a.dark:hover, a.dark:focus, a.dark:active {color: #777; color: var(--dark-text-hover);}
+a.dark:hover, a.dark:focus, a.dark:active {color: #555; color: var(--dark-text-hover);}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -84,6 +85,8 @@ header {
     z-index: 2;
     box-shadow: 0px 1em 0.7em -1em rgba(0,0,0,0.5);
 }
+
+header a.dark:hover, header a.dark:focus, header a.dark:active {color: #c3f1ee; color: var(--head-text-hover);}
 
 .page-logo {
     height: 90%;
