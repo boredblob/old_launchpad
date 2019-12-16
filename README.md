@@ -5,6 +5,7 @@ My personal site
 
 - [x] Database supports pages rather than single images.
 - [x] Gallery supports multiple images per page.
+- [x] Add light theme
 - [ ] Add sketchbook drawings to database. (Digitally redo bad apple).
 
 ## Back-end
