@@ -219,7 +219,7 @@ header form input {
 
 .workspace-container {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 4.2vw);
     touch-action: pan-y pinch-zoom;
     overflow: hidden;
 }
