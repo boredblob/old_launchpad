@@ -144,15 +144,16 @@ header form input {
 }
 
 .workspace-scroll .bar .handle {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1em;
+    height: 1em;
     background: #c3f1ee;
     border-radius: 50%;
     position: relative;
     transform: translateX(-50%);
-    transition: left 0.3s ease-out;
-    will-change: left;
+    transition: left 0.3s ease-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
 }
+
+.workspace-scroll .bar .handle:hover {width: 1.5em; height: 1.5em;}
 
 @keyframes fade-in {
     from {

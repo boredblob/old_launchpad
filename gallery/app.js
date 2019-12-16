@@ -138,6 +138,7 @@ function handleMove(e) {
 
 function handleEnd(e) {
   e.preventDefault();
+  h.style.height = h.style.width = (e.pointerType === "mouse") ? "" : "1em";
   h.style.transition = w.style.transition = "all 0.3s ease-out";
   
   requestAnimationFrame(() => {
@@ -156,6 +157,7 @@ function handleEnd(e) {
 
 function handleDown(e) {
   e.preventDefault();
+  h.style.height = h.style.width = "1.5em";
   h.style.transition = w.style.transition = "initial";
   h_startX = w_scroll.offsetLeft;
   requestAnimationFrame(() => {handleMove(e);});
