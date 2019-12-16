@@ -184,7 +184,7 @@ function handleGestureEnd(e) {
 
 function handleGestureStart(e) {
   var text = [].reduce.call(e.target.childNodes, (a, b) => {return a + (b.nodeType === 3 ? b.textContent : '');}, '').trim();
-  if (text === "") {
+  if (text === "" || e.pointerType !== "mouse") {
     e.preventDefault();
     w.style.transition = "initial";
     currentPosX = initialTouchPosX = getGesturePointFromEvent(e);
