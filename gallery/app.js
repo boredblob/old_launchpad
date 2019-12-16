@@ -51,7 +51,6 @@ fetch("/search/data.json")
 .catch((e) => {console.log("Error: " + e);});
 
 const h = document.querySelector(".workspace-scroll .handle");
-const bar = document.querySelector(".workspace-scroll .b-bar");
 const w_scroll = document.querySelector(".workspace-scroll");
 
 var h_startX = 0, h_currentX = 0, h_left = 0, pageLeft = 0;
