@@ -24,13 +24,9 @@ function toEle(e) {requestAnimationFrame(() => {
     let containerRect = main_nav.getBoundingClientRect(),
     elemRect = e.getBoundingClientRect(),
     x = elemRect.left - containerRect.left - 1,
-    y = elemRect.top - containerRect.top - 1,
-    w = elemRect.width,
-    h = elemRect.height;
+    w = elemRect.width;
     underline.style.left = x + "px";
-    underline.style.top = y + "px";
     underline.style.width = w - (emVal * 2) + 4 + "px";
-    underline.style.height = h - (emVal * 2) + 4 + "px";
   })
 }
 

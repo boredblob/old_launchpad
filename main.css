@@ -113,6 +113,11 @@ header form {
     padding-right: 1.5vw;
 }
 
+header form .invis {
+    position: absolute;
+    top: -500px;
+}
+
 header form input {
     padding: 0.5em;
     font-size: 1em;
@@ -161,11 +166,14 @@ header form input {
 }
 
 #underline {
+    width: 2em;
+    left: 1em;
     border-bottom: 3px solid #ffcfff;
     border-color: var(--light-accent);
-    position: absolute;
-    padding: 1em;
+    position: relative;
+    padding: 0 1em;
     pointer-events: none;
+    transform: translateY(-100%);
     transition: all 0.2s ease-in;
 }
 

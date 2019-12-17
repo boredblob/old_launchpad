@@ -1,0 +1,21 @@
+{
+  "short_name": "Launchpad",
+  "name": "Personal Launchpad",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#be9b7b",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#be9b7b"
+}

@@ -112,6 +112,11 @@ header form {
     padding-right: 1.5vw;
 }
 
+header form .invis {
+    position: absolute;
+    top: -500px;
+}
+
 header form input {
     padding: 0.5em;
     font-size: 1em;

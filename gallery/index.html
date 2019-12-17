@@ -3,15 +3,17 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Omer">
+    <meta name="description" content="The gallery for my site.">
     <meta charset="utf-8" />
     <title>Personal Launchpad</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.7" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.8" />
 </head>
 <body>
     <header>
         <a href="/" class="page-logo">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
+            <svg viewBox="0 0 64 64" aria-hidden="true" alt="home">
                <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
             </svg>
         </a>
@@ -31,7 +33,8 @@
             </ul>
         </nav>
         <form onsubmit="return __search();">
-            <input type="text" class="searchbar" placeholder="Search" />
+            <label class="invis" for="_searchbar">Search the site</label>
+            <input type="text" id="_searchbar" class="searchbar" placeholder="Search" />
         </form>
         <script src="../search.js"></script>
     </header>
