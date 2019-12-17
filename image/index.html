@@ -6,31 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#121012">
+  <meta name="description" content="A custom image viewer for my site.">
   <meta charset="utf-8" />
   <title>Personal Launchpad</title>
   <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.2" />
 </head>
 <body>
-  <div class="page-logo">
+  <main>
+    <div class="page-logo">
     <a href="/">
       <svg viewBox="0 0 64 64" aria-labelledby="home" role="link">
           <title id="home">Home</title>
           <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
         </svg>
-    </a>
-  </div>
-  <div class="description-container">
-    <div class="description" open="false">No description found.</div>
-    <button class="info-button">
-      <svg viewBox="0 0 72 24" class="chevron">
-        <polyline points="68 6 36 12 4 6"></polyline>
-      </svg>
-    </button>
-  </div>
-  <img class="image" alt="No image found with that ID"></img>
-  <div class="footer">
-    <p class="title">No title found</p>
-  </div>
+      </a>
+    </div>
+    <div class="description-container">
+      <div class="description" open="false">No description found.</div>
+      <button class="info-button" aria-label="Show description">
+        <svg viewBox="0 0 72 24" class="chevron">
+          <polyline points="68 6 36 12 4 6"></polyline>
+        </svg>
+      </button>
+    </div>
+    <img class="image" alt="No image found with that ID"></img>
+    <div class="footer">
+      <p class="title">No title found</p>
+    </div>
+  </main>
   <script>
     var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
     document.querySelector(".image").src = "/gallery/" + imageID + ".png";
