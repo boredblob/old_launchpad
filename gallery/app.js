@@ -59,6 +59,11 @@ var h_startX = 0, h_currentX = 0, h_left = 0, pageLeft = 0;
 var initialTouchPosX = 0, currentPosX = 0;
 var events = new Object;
 
+function selectTab() {
+  w.style.transform = 'translateX(' + -pageID + '00vw)';
+  h.style.left = ((pageID / pages_num) * w_scroll.offsetWidth) + "px";
+}
+
 function getGesturePointFromEvent(evt) {
   var x = 0;
   if(evt.targetTouches) {
@@ -101,8 +106,7 @@ function handleGestureEnd(e) {
         }
       }
     }
-    w.style.transform = 'translateX(' + -(pageID * window.innerWidth) + 'px)';
-    h.style.left = ((pageID / pages_num) * w_scroll.offsetWidth) + "px";
+    selectTab();
   });
 
   document.removeEventListener(events.move, handleGestureMove, true);
@@ -121,7 +125,6 @@ function handleGestureStart(e) {
     document.addEventListener(events.cancel, handleGestureEnd, true);
   }
 }
-
 
 function limitX() {
   if (h_left < 0) {h_left = 0;}
@@ -151,8 +154,7 @@ function handleEnd(e) {
     var sPage = Math.round(((h_left / w_scroll.offsetWidth) * pages_num));
     var sPageX = sPage * 100;
     pageID = sPage;
-    h.style.left = ((sPage / pages_num) * w_scroll.offsetWidth) + "px";
-    w.style.transform = 'translateX(' + -sPageX + 'vw)';
+    selectTab();
   });
   document.removeEventListener(events.move, handleMove, true);
   document.removeEventListener(events.end, handleEnd, true);
@@ -187,3 +189,20 @@ if (window.PointerEvent) {
   w.addEventListener('mousedown', handleGestureStart, true);
   w_scroll.addEventListener('mousedown', handleDown, true);
 }
+
+function nextPage(left) {
+  if (left) {pageID--;} else {pageID++;}
+  if (pageID < 0 || pageID > pages_num) {
+    var x = (pageID < 0) ? -window.innerWidth / 5 : window.innerWidth / 5;
+    pageID = (pageID < 0) ? 0 : pages_num;
+    requestAnimationFrame(() => {w.style.transform = 'translateX(' + ((-pageID * window.innerWidth) - x) + 'px)';});
+    setTimeout(() => {requestAnimationFrame(selectTab);}, 300);
+  } else {
+    requestAnimationFrame(selectTab);
+  }
+}
+
+window.onkeydown = (e) => {
+  if (e.code === "ArrowLeft") {nextPage(true);}
+  if (e.code === "ArrowRight") {nextPage(false);}
+};

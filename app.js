@@ -126,6 +126,13 @@ fetch("/search/data.json")
   .catch((e) => console.log("Error fetching data\n" + e));
 
 
+function selectTab() {
+  w.style.transform = 'translateX(' + -pageID + '00vw)';
+  for (let li of list_items) {li.className = ""};
+  list_items[pageID].className = "selected-li";
+  toEle(document.querySelector(".selected-li"));
+}
+
 var initialTouchPosX = 0, currentPosX = 0;
 var events = new Object;
 
@@ -171,10 +178,7 @@ function handleGestureEnd(e) {
         }
       }
     }
-    w.style.transform = 'translateX(' + -(pageID * window.innerWidth) + 'px)';
-    for (let li of list_items) {li.className = ""};
-    list_items[pageID].className = "selected-li";
-    toEle(document.querySelector(".selected-li"));
+    selectTab();
   });
 
   document.removeEventListener(events.move, handleGestureMove, true);
@@ -206,3 +210,20 @@ if (window.PointerEvent) {
   events.cancel = "touchcancel";
   w.addEventListener('mousedown', this.handleGestureStart, true);
 }
+
+function nextPage(left) {
+  if (left) {pageID--;} else {pageID++;}
+  if (pageID < 0 || pageID > 3) {
+    var x = (pageID < 0) ? -window.innerWidth / 5 : window.innerWidth / 5;
+    pageID = (pageID < 0) ? 0 : 3;
+    requestAnimationFrame(() => {w.style.transform = 'translateX(' + ((-pageID * window.innerWidth) - x) + 'px)';});
+    setTimeout(() => {requestAnimationFrame(selectTab);}, 300);
+  } else {
+    requestAnimationFrame(selectTab);
+  }
+}
+
+window.onkeydown = (e) => {
+  if (e.code === "ArrowLeft") {nextPage(true);}
+  if (e.code === "ArrowRight") {nextPage(false);}
+};
