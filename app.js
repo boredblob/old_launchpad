@@ -100,6 +100,7 @@ fetch("/search/data.json")
             let a = document.createElement("a");
             img.src = "/gallery/thumbs/" + d.file + ".png";
             img.alt = d.name;
+            img.loading = "lazy";
             a.href = "/image/?i=" + d.file;
             a.appendChild(img);
             imgcolumns[i % cols].appendChild(a);
