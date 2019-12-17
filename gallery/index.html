@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Omer">
     <meta name="description" content="The gallery for my site.">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#121012">
     <meta charset="utf-8" />
     <title>Personal Launchpad</title>
     <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.8" />
@@ -13,8 +15,9 @@
 <body>
     <header>
         <a href="/" class="page-logo">
-            <svg viewBox="0 0 64 64" aria-hidden="true" alt="home">
-               <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
+            <svg viewBox="0 0 64 64" aria-labelledby="home" role="link">
+                <title id="home">Home</title>
+                <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
             </svg>
         </a>
         <nav class="navbar">

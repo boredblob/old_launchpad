@@ -55,6 +55,11 @@ main h3 {
   margin: 0.5em 0;
 }
 
+.invis {
+  position: absolute;
+  top: -1000px;
+}
+
 main .searchbar {
   width: 100%;
   height: 6vmin;

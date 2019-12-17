@@ -4,6 +4,8 @@
 <head>
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#121012">
   <meta charset="utf-8" />
   <title>Personal Launchpad</title>
   <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.0" />
@@ -11,7 +13,8 @@
 <body>
   <div class="page-logo">
     <a href="/">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
+      <svg viewBox="0 0 64 64" aria-labelledby="home" role="link">
+          <title id="home">Home</title>
           <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
         </svg>
     </a>
@@ -19,7 +22,8 @@
   <main>
     <h3>Search results</h3>
     <form onsubmit="return __search();">
-      <input type="text" class="searchbar" placeholder="Search" />
+      <label class="invis" for="_searchbar">Search the site</label>
+      <input type="text" id="_searchbar" class="searchbar" placeholder="Search" />
     </form>
     <script src="/search.js"></script>
     <div class="results">

@@ -23,6 +23,7 @@ fetch("/search/data.json")
       
       img.src = page.file + ".png";
       img.className = "image";
+      img.alt = page.title;
       _page.appendChild(img);
   
   
