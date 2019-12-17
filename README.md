@@ -7,13 +7,7 @@ My personal site
 - [x] Gallery supports multiple images per page.
 - [x] Add light theme
 - [ ] Add sketchbook drawings to database. (Digitally redo bad apple).
-- [ ] Use ```js
-navigator.connection.effectiveType
-```
-and
-```js
-navigator.connection.saveData
-``` to optimise gallery and other features for lower data consumption.
+- [ ] Use ```js navigator.connection.effectiveType``` and ```js navigator.connection.saveData``` to optimise gallery and other features for lower data consumption.
 
 ## Back-end
 
