@@ -189,7 +189,7 @@ header form input {
 
 .workspace-container {
     width: 100%;
-    height: calc(100% - 4.2vw);
+    height: calc(100% - 4.4vw);
     touch-action: pan-y pinch-zoom;
     overflow: hidden;
 }
