@@ -40,18 +40,20 @@ main_nav.onmouseleave = () => {
 }; //set lower down at other onresize
 toEle(document.querySelector(".selected-li"));
 
-for (let chevron of chevrons) {
-  chevron.onclick = (e) => {requestAnimationFrame(() => {
+for (const chevron of chevrons) {
+  chevron.onclick = (e) => {
+    const code = document.getElementById(e.target.getAttribute("code"));
+    requestAnimationFrame(() => {
     if (e.target.style.transform === "") {
       for (let x of chevrons) {x.style.transform = "";}
       e.target.style.transform = "rotate(180deg)";
-  
+
       for (let x of document.querySelector("#source-code").children) {x.style.display = "none";}
-      document.getElementById(e.target.getAttribute("code")).style.display = "block";
+      code.style.display = "block";
     }
     else {
       e.target.style.transform = "";
-      document.getElementById(e.target.getAttribute("code")).style.display = "none";
+      code.style.display = "none";
     }
   }
 )}};
