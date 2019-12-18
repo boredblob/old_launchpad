@@ -8,7 +8,7 @@ My personal site
 - [x] Add light theme
 - [ ] Add sketchbook drawings to database. (Digitally redo bad apple).
 - [ ] Use `navigator.connection.effectiveType` and `navigator.connection.saveData` to optimise gallery and other features for lower data consumption.
-- [ ] Only load source code when button is clicked.
+~~- [ ] Only load source code when button is clicked.~~ *(I give up with this)*
 
 ## Back-end
 
