@@ -24,7 +24,6 @@ fetch("/search/data.json")
       img.src = page.file + ".png";
       img.className = "image";
       img.alt = page.title;
-      img.loading = "lazy";
       _page.appendChild(img);
   
   
