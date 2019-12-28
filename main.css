@@ -140,6 +140,7 @@ header form input {
 
 .main-nav-container {
     margin: 1em 4% 0 4%;
+    height: 4rem;
 }
 
 #main-nav {
@@ -189,7 +190,7 @@ header form input {
 
 .workspace-container {
     width: 100%;
-    height: calc(100% - 4.4vw);
+    height: calc(100% - 5.2rem);
     touch-action: pan-y pinch-zoom;
     overflow: hidden;
 }

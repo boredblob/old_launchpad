@@ -97,7 +97,7 @@ function handleGestureMove(e) {
 
 function handleGestureEnd(e) {
   e.preventDefault();
-  w.style.transition = "all 0.3s ease-out";
+  w.style.transition = "transform 0.3s ease-out";
 
   requestAnimationFrame(() => {
     if (Math.abs(currentPosX - initialTouchPosX) > window.innerWidth / 3) {
@@ -190,7 +190,6 @@ if (window.PointerEvent) {
   events.cancel = "pointercancel";
 } else {
   w.addEventListener('touchstart', handleGestureStart, true);
-  //h.addEventListener('touchstart', handleDown, true);
   w_scroll.addEventListener('touchstart', handleDown, true);
   events.move = "touchmove";
   events.end = "touchend";
@@ -215,3 +214,7 @@ window.onkeydown = (e) => {
   if (e.code === "ArrowLeft") {nextPage(true);}
   if (e.code === "ArrowRight") {nextPage(false);}
 };
+
+window.onresize = () => {
+  w.style.transition = "none";
+}

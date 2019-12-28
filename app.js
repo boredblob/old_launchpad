@@ -25,7 +25,7 @@ function toEle(e) {requestAnimationFrame(() => {
     elemRect = e.getBoundingClientRect(),
     x = elemRect.left - containerRect.left - 1,
     w = elemRect.width;
-    underline.style.left = x + "px";
+    underline.style.transform = "translate(calc(" + x + "px - 25%), -100%)";
     underline.style.width = w - (emVal * 2) + 4 + "px";
   })
 }
@@ -120,6 +120,7 @@ fetch("/search/data.json")
     window.onresize = () => {
       toEle(document.querySelector(".selected-li"));
       if (window.innerWidth !== _width) {
+        w.style.transition = "none";
         calcCols();
         _width = window.width;
       }
@@ -163,7 +164,7 @@ function handleGestureMove(e) {
 
 function handleGestureEnd(e) {
   e.preventDefault();
-  w.style.transition = "all 0.3s ease-out";
+  w.style.transition = "transform 0.3s ease-out";
 
   requestAnimationFrame(() => {
     if (Math.abs(currentPosX - initialTouchPosX) > window.innerWidth / 3) {
