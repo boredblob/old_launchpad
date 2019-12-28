@@ -100,7 +100,7 @@ fetch("/search/data.json")
             d = d.pages[0];
             let img = document.createElement("img");
             let a = document.createElement("a");
-            img.src = "/gallery/thumbs/" + d.file + ".png";
+            img.src = "/gallery/thumbs/" + d.file;
             img.alt = d.name;
             img.loading = "lazy";
             a.href = "/image/?i=" + d.file;

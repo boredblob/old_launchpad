@@ -17,7 +17,7 @@
     <a href="/">
       <svg viewBox="0 0 64 64" aria-labelledby="home" role="link">
           <title id="home">Home</title>
-          <circle cx="32" cy="32" r="20" stroke-width="10" fill="none" />
+          <circle cx="32" cy="32" r="20" stroke-width="10" fill="none"></circle>
         </svg>
       </a>
     </div>
@@ -29,59 +29,11 @@
         </svg>
       </button>
     </div>
-    <img class="image" alt="No image found with that ID"></img>
+    <img class="image" alt="No image found with that ID" />
     <div class="footer">
       <p class="title">No title found</p>
     </div>
   </main>
-  <script>
-    var imageID = decodeURI(window.location.href.split("?")[1].split("i=")[1].split("&")[0]);
-    document.querySelector(".image").src = "/gallery/" + imageID + ".png";
-    fetch("/search/data.json")
-    .then(response => response.json())
-    .then(data => {
-      for (let i of data) {
-        if (i.pages[0].file == imageID) {
-          document.querySelector(".footer .title").innerHTML = i.name;
-          document.querySelector(".description").innerHTML = i.pages[0].description;
-        }
-      }
-
-      var button = document.querySelector(".info-button");
-      var desc = document.querySelector(".description");
-      var h = desc.clientHeight + 1;
-      var c = document.querySelector(".description-container");
-      desc.style.marginTop = "-" + h + "px";
-
-      button.addEventListener("click", (e) => {
-        c.style.transform = "";
-        if (desc.getAttribute("open") === "true") {
-          desc.style.marginTop = "-" + h + "px";
-          desc.setAttribute("open",  "false");
-        } else {
-          desc.style.marginTop = "0px";
-          desc.setAttribute("open",  "true");
-        };
-      });
-      button.onmouseover = () => {if (desc.getAttribute("open") === "false") {c.style.transform = "translateY(10px)";}};
-      button.onmouseleave = () => {c.style.transform = "";};
-      window.onclick = (e) => {
-        if (!desc.contains(e.target) && !button.contains(e.target)) {
-          desc.style.marginTop = "-" + h + "px";
-          desc.setAttribute("open",  "false");
-        }
-      };
-
-      window.addEventListener("resize", () => {
-        h = desc.clientHeight + 1;
-        if (desc.getAttribute("open") === "false") {
-          desc.style.marginTop = "-" + h + "px";
-        } else {
-          desc.style.marginTop = "0px";
-        }
-      });
-    })
-    .catch((e) => {console.log("Error: " + e);});
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -1,6 +1,10 @@
 # omerismyname.github.io
 My personal site
 
+## Stuff I need to remember because I keep forgetting how to fix the error
+
+- Draggable objects reset their position after initial touch (or small amount of movement) on mobile - have you set a touch-action for the area?
+
 ## To-do
 
 - [x] Database supports pages rather than single images.

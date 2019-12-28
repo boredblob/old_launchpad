@@ -21,7 +21,15 @@ fetch("/search/data.json")
 
       var img = document.createElement("img");
       
-      img.src = page.file + ".png";
+      if (navigator.connection) {
+        if (navigator.connection.effectiveType !== "4g" || navigator.connection.saveData) {
+          img.src = "/gallery/thumbs/" + page.file;
+        } else {
+          img.src = "/gallery/" + page.file;
+        }
+      } else {
+        img.src = "/gallery/" + page.file;
+      }
       img.className = "image";
       img.alt = page.title;
       _page.appendChild(img);
@@ -40,6 +48,7 @@ fetch("/search/data.json")
   
       descBoxP.className = "caption";
       descBoxP.innerHTML = page.description;
+      if (page.description == "") {descBox.style.border = "none"}
       descBox.className = "desc";
       
       descBox.appendChild(descBoxP);
