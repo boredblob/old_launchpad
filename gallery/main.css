@@ -356,6 +356,12 @@ header form input {
   background: #ca87ca; background: var(--scrollbar-hover);
 }
 
+::selection {
+    background: #999;
+    color: inherit;
+}
+
+
 :root {
     --background: #121012;
     --light-text: #fffcf5;
