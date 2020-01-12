@@ -1,5 +1,16 @@
 [
   {
+    "title": "Mist",
+    "name": "Mist",
+    "tags": ["mist", "green", "landscape", "parallax", "lighting", "digital"],
+    "pages": [
+      {
+        "file": "mist.png",
+        "description": "This little vector illustration thingy was made for a little experiment with parallax. In a <a href='https://now.am-i.cool/web-stuff/parallax'>separate site</a> I used layers to build up a parallax effect of sorts based off a few tutorials and things (mainly the <a href='https://www.firewatchgame.com/'>firewatch website</a> because it's awesome)."
+      }
+    ]
+  },
+  {
     "title": "Mannequin",
     "name": "Mannequin",
     "tags": ["mannequin", "colours", "lighting", "neon", "abstract", "photography", "computer"],
