@@ -1,5 +1,5 @@
 # omerismyname.github.io
-My personal site
+My previous personal site
 
 ## Stuff I need to remember because I keep forgetting how to fix the error
 
